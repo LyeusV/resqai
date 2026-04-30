@@ -9,6 +9,10 @@ Menü alabilir miyim lütfen?,menu_isteme
 Hangi yemekleriniz var?,menu_isteme
 Restoranınızda ne yenir?,menu_isteme
 Yemek seçeneklerini görmek istiyorum.,menu_isteme
+Spesiyal yemekleriniz var mı?,menu_isteme
+Ana yemekleri göster.,menu_isteme
+Başlangıçlar kısmı nedir?,menu_isteme
+Tatlı çeşitleriniz hangsileri?,menu_isteme
 Hamburger ne kadar?,fiyat_sorma
 Çorbanın fiyatı nedir?,fiyat_sorma
 En ucuz tatlı hangisi?,fiyat_sorma
@@ -19,6 +23,9 @@ Kebap fiyatını öğrenebilir miyim?,fiyat_sorma
 Fiyatlar nasıl?,fiyat_sorma
 İçecekler ücretli mi?,fiyat_sorma
 Tatlıların fiyatını söyler misin?,fiyat_sorma
+Kola kaç para?,fiyat_sorma
+En pahalı yemek hangisidir?,fiyat_sorma
+Büyük boy porsiyon kaç lira daha pahalı?,fiyat_sorma
 Fıstık alerjim var ne önerirsiniz?,alerjen_oneri_isteme
 Sütsüz tatlılarınız neler?,alerjen_oneri_isteme
 Gluten içermeyen ana yemek var mı?,alerjen_oneri_isteme
@@ -29,3 +36,24 @@ Ceviz alerjim var hangi tatlıyı yiyebilirim?,alerjen_oneri_isteme
 Glutensiz pizza yapıyor musunuz?,alerjen_oneri_isteme
 Laktozsuz içecekleriniz hangileri?,alerjen_oneri_isteme
 Deniz ürünü alerjisi olan biri ne yiyebilir?,alerjen_oneri_isteme
+Sebzeli seçenekleriniz neler?,alerjen_oneri_isteme
+Sağlıklı beslenme seçenekleri nelerdir?,alerjen_oneri_isteme
+Kalorisi düşük yemekler var mı?,alerjen_oneri_isteme
+Masa ayırtmak istiyorum.,masa_rezervasyonu
+Cumartesi akşamı 2 kişi için masa var mı?,masa_rezervasyonu
+Yakında gelmek istiyoruz kaç kişilik masa bulabilir misiniz?,masa_rezervasyonu
+20:00'de masa ayırtabilir miyim?,masa_rezervasyonu
+Pazar öğlen 4 kişi için yer var mı?,masa_rezervasyonu
+Açılış saatleri nedir?,acilis_saatleri
+Saat kaçta kapalısınız?,acilis_saatleri
+Pazar günü açık mısınız?,acilis_saatleri
+Hafta sonu saatleriniz nedir?,acilis_saatleri
+Haftada kaç gün açıksınız?,acilis_saatleri
+Telefonunuz kaç?,iletisim
+Adresiniz nerede?,iletisim
+Nasıl ulaşabilirim?,iletisim
+Hangi bölgede bulunuyorsunuz?,iletisim
+Kredi kartı kabul ediyor musunuz?,odeme_yontemi
+Nakit ödeme yapabilir miyim?,odeme_yontemi
+Mobil ödeme alıyor musunuz?,odeme_yontemi
+Para transfer ile ödeme yapabilir mi?,odeme_yontemi

@@ -16,15 +16,45 @@ docker build -t resqai .
 docker run -p 8000:8000 resqai
 ```
 
-## Docker Compose
+## Docker Compose (Development)
 
 ```bash
 docker compose up --build
 ```
 
+Volume mapping sayesinde dosyalari degistirince container otomatik reload yapıyor:
+- `src/` degisiklikleri direkt container'da gorunur
+- `dataset/dataset.csv` okunur ve model yeniden egitilir (manuel olarak)
+- `models/` klasoru kalici hale getirilir
+
 Ornek istek:
 
 ```bash
 curl -X POST http://127.0.0.1:8000/chat -H "Content-Type: application/json" -d "{\"message\": \"Bugun ne yiyorsunuz?\"}"
+```
+
+## Veri Seti Genisletme
+
+`dataset/dataset.csv` dosyasina yeni ornekler ekleyin, her satir bir mesaj ve intent icermeli:
+
+```csv
+metin,niyet
+Menude neler var?,menu_isteme
+Masa ayirtmak istiyorum.,masa_rezervasyonu
+```
+
+7 intent tuру mevcut:
+- `menu_isteme`: Menu ve yemek listesi sorulari
+- `fiyat_sorma`: Fiyat sorulari
+- `alerjen_oneri_isteme`: Alerjen ve diyetsel secenekler
+- `masa_rezervasyonu`: Masa ayirtma
+- `acilis_saatleri`: Acilis/kapanış saatleri
+- `iletisim`: Adres, telefon gibi iletisim bilgileri
+- `odeme_yontemi`: Odeme secenekleri
+
+Veri ekledikten sonra modeli yeniden egitmek icin:
+
+```bash
+docker exec resqai-resqai python -m resqai.train
 ```
 
