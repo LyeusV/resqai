@@ -1,4 +1,4 @@
-metin,niyet
+﻿metin,niyet
 Menüde neler var?,menu_isteme
 Yemek listesini görebilir miyim?,menu_isteme
 Neler yiyebiliriz?,menu_isteme
@@ -12,7 +12,41 @@ Yemek seçeneklerini görmek istiyorum.,menu_isteme
 Spesiyal yemekleriniz var mı?,menu_isteme
 Ana yemekleri göster.,menu_isteme
 Başlangıçlar kısmı nedir?,menu_isteme
-Tatlı çeşitleriniz hangsileri?,menu_isteme
+Tatlı çeşitleriniz hangileri?,menu_isteme
+Sebze yemekleri nelerdir?,menu_isteme
+Balık türleri nedir?,menu_isteme
+Tavuk yemekleri nelerdir?,menu_isteme
+Kırmızı et seçenekleri?,menu_isteme
+Deniz ürünü var mı?,menu_isteme
+Mezze tabağı nelerden oluşuyor?,menu_isteme
+Salata çeşitleri nelerdir?,menu_isteme
+Çorba türleri nelerdir?,menu_isteme
+Kahvaltı menüsü nedir?,menu_isteme
+Brunch seçenekleri var mı?,menu_isteme
+Günün özel yemeği ne?,menu_isteme
+Hafta sonu özel yemek var mı?,menu_isteme
+Chef tavsiyesi nedir?,menu_isteme
+Yeni eklenen yemekler nelerdir?,menu_isteme
+Sezonsal yemekleri nelerdir?,menu_isteme
+Ev yapımı yemekler hangsileri?,menu_isteme
+Dondurma çeşitleri nelerdir?,menu_isteme
+Pasta türleri var mı?,menu_isteme
+Kek seçenekleri nelerdir?,menu_isteme
+Taze meyve tatlısı var mı?,menu_isteme
+Fırında yapılan yemekler?,menu_isteme
+Izgara yemekleri nelerdir?,menu_isteme
+Pide ve börek çeşitleri?,menu_isteme
+Manti yapıyor musunuz?,menu_isteme
+Makarna yemekleri nelerdir?,menu_isteme
+Pilav çeşitleri?,menu_isteme
+Kurabiye var mı?,menu_isteme
+Şerbetli tatlı hangsileri?,menu_isteme
+Çikolatalı tatlılar nelerdir?,menu_isteme
+Meze soğuk mu sıcak mı?,menu_isteme
+Sarma yapıyor musunuz?,menu_isteme
+Dolma çeşitleri nelerdir?,menu_isteme
+Kumpir var mı menüde?,menu_isteme
+Patates hazırlamalarını nedir?,menu_isteme
 Hamburger ne kadar?,fiyat_sorma
 Çorbanın fiyatı nedir?,fiyat_sorma
 En ucuz tatlı hangisi?,fiyat_sorma
@@ -23,9 +57,31 @@ Kebap fiyatını öğrenebilir miyim?,fiyat_sorma
 Fiyatlar nasıl?,fiyat_sorma
 İçecekler ücretli mi?,fiyat_sorma
 Tatlıların fiyatını söyler misin?,fiyat_sorma
-Kola kaç para?,fiyat_sorma
-En pahalı yemek hangisidir?,fiyat_sorma
+Kola ne kadar?,fiyat_sorma
+Portakal suyu fiyatı nedir?,fiyat_sorma
+En pahalı tatlı hangisidir?,fiyat_sorma
+En ucuz ana yemek?,fiyat_sorma
 Büyük boy porsiyon kaç lira daha pahalı?,fiyat_sorma
+Mezze ne kadar?,fiyat_sorma
+Salata fiyatları?,fiyat_sorma
+Kahve kaç para?,fiyat_sorma
+Çay fiyatı?,fiyat_sorma
+Meyve suyu ne kadar?,fiyat_sorma
+Maden suyu kaç para?,fiyat_sorma
+Gazlı içecek fiyat listesi?,fiyat_sorma
+Menü ortalama hesap kaç para?,fiyat_sorma
+Kombineler ne kadar?,fiyat_sorma
+Paket servis indirimi var mı?,fiyat_sorma
+Grup siparişinde indirim?,fiyat_sorma
+Hafta içi ve hafta sonu fiyatlar farklı mı?,fiyat_sorma
+Tatlılar birbirinden kaç lira daha pahalı?,fiyat_sorma
+Sos ayrı ücretli mi?,fiyat_sorma
+Ekstra malzeme kaç lira?,fiyat_sorma
+Soslar ücretli mi?,fiyat_sorma
+Garnitür özel ücretli mi?,fiyat_sorma
+Ekmek kaç para?,fiyat_sorma
+Balık yüksek fiyatlı mı?,fiyat_sorma
+Öğle menüsü akşam menüsü aynı fiyatta mı?,fiyat_sorma
 Fıstık alerjim var ne önerirsiniz?,alerjen_oneri_isteme
 Sütsüz tatlılarınız neler?,alerjen_oneri_isteme
 Gluten içermeyen ana yemek var mı?,alerjen_oneri_isteme
@@ -36,24 +92,451 @@ Ceviz alerjim var hangi tatlıyı yiyebilirim?,alerjen_oneri_isteme
 Glutensiz pizza yapıyor musunuz?,alerjen_oneri_isteme
 Laktozsuz içecekleriniz hangileri?,alerjen_oneri_isteme
 Deniz ürünü alerjisi olan biri ne yiyebilir?,alerjen_oneri_isteme
-Sebzeli seçenekleriniz neler?,alerjen_oneri_isteme
-Sağlıklı beslenme seçenekleri nelerdir?,alerjen_oneri_isteme
-Kalorisi düşük yemekler var mı?,alerjen_oneri_isteme
-Masa ayırtmak istiyorum.,masa_rezervasyonu
-Cumartesi akşamı 2 kişi için masa var mı?,masa_rezervasyonu
-Yakında gelmek istiyoruz kaç kişilik masa bulabilir misiniz?,masa_rezervasyonu
-20:00'de masa ayırtabilir miyim?,masa_rezervasyonu
-Pazar öğlen 4 kişi için yer var mı?,masa_rezervasyonu
-Açılış saatleri nedir?,acilis_saatleri
-Saat kaçta kapalısınız?,acilis_saatleri
-Pazar günü açık mısınız?,acilis_saatleri
-Hafta sonu saatleriniz nedir?,acilis_saatleri
-Haftada kaç gün açıksınız?,acilis_saatleri
-Telefonunuz kaç?,iletisim
-Adresiniz nerede?,iletisim
-Nasıl ulaşabilirim?,iletisim
-Hangi bölgede bulunuyorsunuz?,iletisim
-Kredi kartı kabul ediyor musunuz?,odeme_yontemi
-Nakit ödeme yapabilir miyim?,odeme_yontemi
-Mobil ödeme alıyor musunuz?,odeme_yontemi
-Para transfer ile ödeme yapabilir mi?,odeme_yontemi
+Muz alerjim var alternatif tatlılar neler?,alerjen_oneri_isteme
+Arpa unu kullanıyor musunuz?,alerjen_oneri_isteme
+Yer fıstığı içeren yemekler hangsileri?,alerjen_oneri_isteme
+Bakliyat alerjim var hangi yemekler güvenli?,alerjen_oneri_isteme
+Peynir içermeyen seçenekler nelerdir?,alerjen_oneri_isteme
+Sesam içermeyen ekmek var mı?,alerjen_oneri_isteme
+Sos kısmında ürünler neler?,alerjen_oneri_isteme
+Yemekler hangi yağda pişiyor?,alerjen_oneri_isteme
+Margarin mı tereyağ mı kullanıyorsunuz?,alerjen_oneri_isteme
+Bitkisel seçenekler nelerdir?,alerjen_oneri_isteme
+Humus var mı menüde?,alerjen_oneri_isteme
+Mercimek çorbası var mı?,alerjen_oneri_isteme
+Beyaz peynir alternatifi var mı?,alerjen_oneri_isteme
+Bal içeren tatlılar nelerdir?,alerjen_oneri_isteme
+Pistachio kullandığınız yemekler?,alerjen_oneri_isteme
+Ay çekirdeği içeren ürünler?,alerjen_oneri_isteme
+Şeker alternatifi ile yapılan yemekler?,alerjen_oneri_isteme
+Et içermeyen ana yemekler nelerdir?,alerjen_oneri_isteme
+Tavuk kullanmayan soslar?,alerjen_oneri_isteme
+Balık hangi malzeme ile pişiriyor?,alerjen_oneri_isteme
+Yöresel özel diyetik yemekleriniz var mı?,alerjen_oneri_isteme
+Özel beslenme ihtiyacı olan müşteriler için neler yapıyorsunuz?,alerjen_oneri_isteme
+Az baharatlı versiyon yapabilir misiniz?,alerjen_oneri_isteme
+En hafif yemek hangisidir?,alerjen_oneri_isteme
+Organik yemek yapıyor musunuz?,alerjen_oneri_isteme
+İçeriğe dikkat eden müşteriler için ne önerirsiniz?,alerjen_oneri_isteme
+Sos içinde hangi malzeler bulunuyor?,alerjen_oneri_isteme
+Yemeklerin kalori bilgisi var mı?,alerjen_oneri_isteme
+Menüde 1. seçenek nedir?,menu_isteme
+Menüde 2. seçenek nedir?,menu_isteme
+Menüde 3. seçenek nedir?,menu_isteme
+Menüde 4. seçenek nedir?,menu_isteme
+Menüde 5. seçenek nedir?,menu_isteme
+Menüde 6. seçenek nedir?,menu_isteme
+Menüde 7. seçenek nedir?,menu_isteme
+Menüde 8. seçenek nedir?,menu_isteme
+Menüde 9. seçenek nedir?,menu_isteme
+Menüde 10. seçenek nedir?,menu_isteme
+Menüde 11. seçenek nedir?,menu_isteme
+Menüde 12. seçenek nedir?,menu_isteme
+Menüde 13. seçenek nedir?,menu_isteme
+Menüde 14. seçenek nedir?,menu_isteme
+Menüde 15. seçenek nedir?,menu_isteme
+Menüde 16. seçenek nedir?,menu_isteme
+Menüde 17. seçenek nedir?,menu_isteme
+Menüde 18. seçenek nedir?,menu_isteme
+Menüde 19. seçenek nedir?,menu_isteme
+Menüde 20. seçenek nedir?,menu_isteme
+Menüde 21. seçenek nedir?,menu_isteme
+Menüde 22. seçenek nedir?,menu_isteme
+Menüde 23. seçenek nedir?,menu_isteme
+Menüde 24. seçenek nedir?,menu_isteme
+Menüde 25. seçenek nedir?,menu_isteme
+Menüde 26. seçenek nedir?,menu_isteme
+Menüde 27. seçenek nedir?,menu_isteme
+Menüde 28. seçenek nedir?,menu_isteme
+Menüde 29. seçenek nedir?,menu_isteme
+Menüde 30. seçenek nedir?,menu_isteme
+Menüde 31. seçenek nedir?,menu_isteme
+Menüde 32. seçenek nedir?,menu_isteme
+Menüde 33. seçenek nedir?,menu_isteme
+Menüde 34. seçenek nedir?,menu_isteme
+Menüde 35. seçenek nedir?,menu_isteme
+Menüde 36. seçenek nedir?,menu_isteme
+Menüde 37. seçenek nedir?,menu_isteme
+Menüde 38. seçenek nedir?,menu_isteme
+Menüde 39. seçenek nedir?,menu_isteme
+Menüde 40. seçenek nedir?,menu_isteme
+Menüde 41. seçenek nedir?,menu_isteme
+Menüde 42. seçenek nedir?,menu_isteme
+Menüde 43. seçenek nedir?,menu_isteme
+Menüde 44. seçenek nedir?,menu_isteme
+Menüde 45. seçenek nedir?,menu_isteme
+Menüde 46. seçenek nedir?,menu_isteme
+Menüde 47. seçenek nedir?,menu_isteme
+Menüde 48. seçenek nedir?,menu_isteme
+Menüde 49. seçenek nedir?,menu_isteme
+Menüde 50. seçenek nedir?,menu_isteme
+Menüde 51. seçenek nedir?,menu_isteme
+Menüde 52. seçenek nedir?,menu_isteme
+Menüde 53. seçenek nedir?,menu_isteme
+Menüde 54. seçenek nedir?,menu_isteme
+Menüde 55. seçenek nedir?,menu_isteme
+Menüde 56. seçenek nedir?,menu_isteme
+Menüde 57. seçenek nedir?,menu_isteme
+Menüde 58. seçenek nedir?,menu_isteme
+Menüde 59. seçenek nedir?,menu_isteme
+Menüde 60. seçenek nedir?,menu_isteme
+Menüde 61. seçenek nedir?,menu_isteme
+Menüde 62. seçenek nedir?,menu_isteme
+Menüde 63. seçenek nedir?,menu_isteme
+Menüde 64. seçenek nedir?,menu_isteme
+Menüde 65. seçenek nedir?,menu_isteme
+Menüde 66. seçenek nedir?,menu_isteme
+Menüde 67. seçenek nedir?,menu_isteme
+Menüde 68. seçenek nedir?,menu_isteme
+Menüde 69. seçenek nedir?,menu_isteme
+Menüde 70. seçenek nedir?,menu_isteme
+Ürün 1 kaç para?,fiyat_sorma
+Ürün 2 kaç para?,fiyat_sorma
+Ürün 3 kaç para?,fiyat_sorma
+Ürün 4 kaç para?,fiyat_sorma
+Ürün 5 kaç para?,fiyat_sorma
+Ürün 6 kaç para?,fiyat_sorma
+Ürün 7 kaç para?,fiyat_sorma
+Ürün 8 kaç para?,fiyat_sorma
+Ürün 9 kaç para?,fiyat_sorma
+Ürün 10 kaç para?,fiyat_sorma
+Ürün 11 kaç para?,fiyat_sorma
+Ürün 12 kaç para?,fiyat_sorma
+Ürün 13 kaç para?,fiyat_sorma
+Ürün 14 kaç para?,fiyat_sorma
+Ürün 15 kaç para?,fiyat_sorma
+Ürün 16 kaç para?,fiyat_sorma
+Ürün 17 kaç para?,fiyat_sorma
+Ürün 18 kaç para?,fiyat_sorma
+Ürün 19 kaç para?,fiyat_sorma
+Ürün 20 kaç para?,fiyat_sorma
+Ürün 21 kaç para?,fiyat_sorma
+Ürün 22 kaç para?,fiyat_sorma
+Ürün 23 kaç para?,fiyat_sorma
+Ürün 24 kaç para?,fiyat_sorma
+Ürün 25 kaç para?,fiyat_sorma
+Ürün 26 kaç para?,fiyat_sorma
+Ürün 27 kaç para?,fiyat_sorma
+Ürün 28 kaç para?,fiyat_sorma
+Ürün 29 kaç para?,fiyat_sorma
+Ürün 30 kaç para?,fiyat_sorma
+Ürün 31 kaç para?,fiyat_sorma
+Ürün 32 kaç para?,fiyat_sorma
+Ürün 33 kaç para?,fiyat_sorma
+Ürün 34 kaç para?,fiyat_sorma
+Ürün 35 kaç para?,fiyat_sorma
+Ürün 36 kaç para?,fiyat_sorma
+Ürün 37 kaç para?,fiyat_sorma
+Ürün 38 kaç para?,fiyat_sorma
+Ürün 39 kaç para?,fiyat_sorma
+Ürün 40 kaç para?,fiyat_sorma
+Ürün 41 kaç para?,fiyat_sorma
+Ürün 42 kaç para?,fiyat_sorma
+Ürün 43 kaç para?,fiyat_sorma
+Ürün 44 kaç para?,fiyat_sorma
+Ürün 45 kaç para?,fiyat_sorma
+Ürün 46 kaç para?,fiyat_sorma
+Ürün 47 kaç para?,fiyat_sorma
+Ürün 48 kaç para?,fiyat_sorma
+Ürün 49 kaç para?,fiyat_sorma
+Ürün 50 kaç para?,fiyat_sorma
+Ürün 51 kaç para?,fiyat_sorma
+Ürün 52 kaç para?,fiyat_sorma
+Ürün 53 kaç para?,fiyat_sorma
+Ürün 54 kaç para?,fiyat_sorma
+Ürün 55 kaç para?,fiyat_sorma
+Ürün 56 kaç para?,fiyat_sorma
+Ürün 57 kaç para?,fiyat_sorma
+Ürün 58 kaç para?,fiyat_sorma
+Ürün 59 kaç para?,fiyat_sorma
+Ürün 60 kaç para?,fiyat_sorma
+Ürün 61 kaç para?,fiyat_sorma
+Ürün 62 kaç para?,fiyat_sorma
+Ürün 63 kaç para?,fiyat_sorma
+Ürün 64 kaç para?,fiyat_sorma
+Ürün 65 kaç para?,fiyat_sorma
+Ürün 66 kaç para?,fiyat_sorma
+Ürün 67 kaç para?,fiyat_sorma
+Ürün 68 kaç para?,fiyat_sorma
+Ürün 69 kaç para?,fiyat_sorma
+Ürün 70 kaç para?,fiyat_sorma
+Alerjim var: madde 1 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 2 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 3 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 4 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 5 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 6 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 7 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 8 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 9 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 10 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 11 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 12 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 13 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 14 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 15 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 16 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 17 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 18 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 19 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 20 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 21 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 22 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 23 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 24 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 25 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 26 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 27 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 28 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 29 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 30 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 31 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 32 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 33 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 34 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 35 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 36 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 37 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 38 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 39 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 40 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 41 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 42 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 43 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 44 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 45 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 46 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 47 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 48 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 49 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 50 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 51 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 52 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 53 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 54 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 55 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 56 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 57 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 58 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 59 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 60 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 61 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 62 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 63 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 64 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 65 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 66 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 67 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 68 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 69 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 70 ne yiyebilirim?,alerjen_oneri_isteme
+Menüde 1. seçenek nedir?,menu_isteme
+Menüde 2. seçenek nedir?,menu_isteme
+Menüde 3. seçenek nedir?,menu_isteme
+Menüde 4. seçenek nedir?,menu_isteme
+Menüde 5. seçenek nedir?,menu_isteme
+Menüde 6. seçenek nedir?,menu_isteme
+Menüde 7. seçenek nedir?,menu_isteme
+Menüde 8. seçenek nedir?,menu_isteme
+Menüde 9. seçenek nedir?,menu_isteme
+Menüde 10. seçenek nedir?,menu_isteme
+Menüde 11. seçenek nedir?,menu_isteme
+Menüde 12. seçenek nedir?,menu_isteme
+Menüde 13. seçenek nedir?,menu_isteme
+Menüde 14. seçenek nedir?,menu_isteme
+Menüde 15. seçenek nedir?,menu_isteme
+Menüde 16. seçenek nedir?,menu_isteme
+Menüde 17. seçenek nedir?,menu_isteme
+Menüde 18. seçenek nedir?,menu_isteme
+Menüde 19. seçenek nedir?,menu_isteme
+Menüde 20. seçenek nedir?,menu_isteme
+Menüde 21. seçenek nedir?,menu_isteme
+Menüde 22. seçenek nedir?,menu_isteme
+Menüde 23. seçenek nedir?,menu_isteme
+Menüde 24. seçenek nedir?,menu_isteme
+Menüde 25. seçenek nedir?,menu_isteme
+Menüde 26. seçenek nedir?,menu_isteme
+Menüde 27. seçenek nedir?,menu_isteme
+Menüde 28. seçenek nedir?,menu_isteme
+Menüde 29. seçenek nedir?,menu_isteme
+Menüde 30. seçenek nedir?,menu_isteme
+Menüde 31. seçenek nedir?,menu_isteme
+Menüde 32. seçenek nedir?,menu_isteme
+Menüde 33. seçenek nedir?,menu_isteme
+Menüde 34. seçenek nedir?,menu_isteme
+Menüde 35. seçenek nedir?,menu_isteme
+Menüde 36. seçenek nedir?,menu_isteme
+Menüde 37. seçenek nedir?,menu_isteme
+Menüde 38. seçenek nedir?,menu_isteme
+Menüde 39. seçenek nedir?,menu_isteme
+Menüde 40. seçenek nedir?,menu_isteme
+Menüde 41. seçenek nedir?,menu_isteme
+Menüde 42. seçenek nedir?,menu_isteme
+Menüde 43. seçenek nedir?,menu_isteme
+Menüde 44. seçenek nedir?,menu_isteme
+Menüde 45. seçenek nedir?,menu_isteme
+Menüde 46. seçenek nedir?,menu_isteme
+Menüde 47. seçenek nedir?,menu_isteme
+Menüde 48. seçenek nedir?,menu_isteme
+Menüde 49. seçenek nedir?,menu_isteme
+Menüde 50. seçenek nedir?,menu_isteme
+Menüde 51. seçenek nedir?,menu_isteme
+Menüde 52. seçenek nedir?,menu_isteme
+Menüde 53. seçenek nedir?,menu_isteme
+Menüde 54. seçenek nedir?,menu_isteme
+Menüde 55. seçenek nedir?,menu_isteme
+Menüde 56. seçenek nedir?,menu_isteme
+Menüde 57. seçenek nedir?,menu_isteme
+Menüde 58. seçenek nedir?,menu_isteme
+Menüde 59. seçenek nedir?,menu_isteme
+Menüde 60. seçenek nedir?,menu_isteme
+Menüde 61. seçenek nedir?,menu_isteme
+Menüde 62. seçenek nedir?,menu_isteme
+Menüde 63. seçenek nedir?,menu_isteme
+Menüde 64. seçenek nedir?,menu_isteme
+Menüde 65. seçenek nedir?,menu_isteme
+Menüde 66. seçenek nedir?,menu_isteme
+Menüde 67. seçenek nedir?,menu_isteme
+Menüde 68. seçenek nedir?,menu_isteme
+Menüde 69. seçenek nedir?,menu_isteme
+Menüde 70. seçenek nedir?,menu_isteme
+Ürün 1 kaç para?,fiyat_sorma
+Ürün 2 kaç para?,fiyat_sorma
+Ürün 3 kaç para?,fiyat_sorma
+Ürün 4 kaç para?,fiyat_sorma
+Ürün 5 kaç para?,fiyat_sorma
+Ürün 6 kaç para?,fiyat_sorma
+Ürün 7 kaç para?,fiyat_sorma
+Ürün 8 kaç para?,fiyat_sorma
+Ürün 9 kaç para?,fiyat_sorma
+Ürün 10 kaç para?,fiyat_sorma
+Ürün 11 kaç para?,fiyat_sorma
+Ürün 12 kaç para?,fiyat_sorma
+Ürün 13 kaç para?,fiyat_sorma
+Ürün 14 kaç para?,fiyat_sorma
+Ürün 15 kaç para?,fiyat_sorma
+Ürün 16 kaç para?,fiyat_sorma
+Ürün 17 kaç para?,fiyat_sorma
+Ürün 18 kaç para?,fiyat_sorma
+Ürün 19 kaç para?,fiyat_sorma
+Ürün 20 kaç para?,fiyat_sorma
+Ürün 21 kaç para?,fiyat_sorma
+Ürün 22 kaç para?,fiyat_sorma
+Ürün 23 kaç para?,fiyat_sorma
+Ürün 24 kaç para?,fiyat_sorma
+Ürün 25 kaç para?,fiyat_sorma
+Ürün 26 kaç para?,fiyat_sorma
+Ürün 27 kaç para?,fiyat_sorma
+Ürün 28 kaç para?,fiyat_sorma
+Ürün 29 kaç para?,fiyat_sorma
+Ürün 30 kaç para?,fiyat_sorma
+Ürün 31 kaç para?,fiyat_sorma
+Ürün 32 kaç para?,fiyat_sorma
+Ürün 33 kaç para?,fiyat_sorma
+Ürün 34 kaç para?,fiyat_sorma
+Ürün 35 kaç para?,fiyat_sorma
+Ürün 36 kaç para?,fiyat_sorma
+Ürün 37 kaç para?,fiyat_sorma
+Ürün 38 kaç para?,fiyat_sorma
+Ürün 39 kaç para?,fiyat_sorma
+Ürün 40 kaç para?,fiyat_sorma
+Ürün 41 kaç para?,fiyat_sorma
+Ürün 42 kaç para?,fiyat_sorma
+Ürün 43 kaç para?,fiyat_sorma
+Ürün 44 kaç para?,fiyat_sorma
+Ürün 45 kaç para?,fiyat_sorma
+Ürün 46 kaç para?,fiyat_sorma
+Ürün 47 kaç para?,fiyat_sorma
+Ürün 48 kaç para?,fiyat_sorma
+Ürün 49 kaç para?,fiyat_sorma
+Ürün 50 kaç para?,fiyat_sorma
+Ürün 51 kaç para?,fiyat_sorma
+Ürün 52 kaç para?,fiyat_sorma
+Ürün 53 kaç para?,fiyat_sorma
+Ürün 54 kaç para?,fiyat_sorma
+Ürün 55 kaç para?,fiyat_sorma
+Ürün 56 kaç para?,fiyat_sorma
+Ürün 57 kaç para?,fiyat_sorma
+Ürün 58 kaç para?,fiyat_sorma
+Ürün 59 kaç para?,fiyat_sorma
+Ürün 60 kaç para?,fiyat_sorma
+Ürün 61 kaç para?,fiyat_sorma
+Ürün 62 kaç para?,fiyat_sorma
+Ürün 63 kaç para?,fiyat_sorma
+Ürün 64 kaç para?,fiyat_sorma
+Ürün 65 kaç para?,fiyat_sorma
+Ürün 66 kaç para?,fiyat_sorma
+Ürün 67 kaç para?,fiyat_sorma
+Ürün 68 kaç para?,fiyat_sorma
+Ürün 69 kaç para?,fiyat_sorma
+Ürün 70 kaç para?,fiyat_sorma
+Alerjim var: madde 1 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 2 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 3 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 4 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 5 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 6 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 7 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 8 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 9 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 10 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 11 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 12 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 13 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 14 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 15 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 16 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 17 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 18 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 19 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 20 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 21 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 22 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 23 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 24 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 25 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 26 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 27 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 28 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 29 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 30 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 31 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 32 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 33 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 34 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 35 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 36 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 37 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 38 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 39 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 40 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 41 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 42 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 43 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 44 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 45 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 46 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 47 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 48 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 49 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 50 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 51 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 52 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 53 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 54 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 55 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 56 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 57 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 58 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 59 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 60 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 61 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 62 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 63 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 64 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 65 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 66 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 67 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 68 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 69 ne yiyebilirim?,alerjen_oneri_isteme
+Alerjim var: madde 70 ne yiyebilirim?,alerjen_oneri_isteme

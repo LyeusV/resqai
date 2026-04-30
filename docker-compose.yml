@@ -1,5 +1,6 @@
 services:
-  resqai:
+  api:
+    container_name: resqai-api
     build: .
     ports:
       - "8000:8000"

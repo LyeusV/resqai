@@ -21,10 +21,6 @@ def test_response_mapping_includes_known_intents() -> None:
     assert response_for_intent("menu_isteme")
     assert response_for_intent("fiyat_sorma")
     assert response_for_intent("alerjen_oneri_isteme")
-    assert response_for_intent("masa_rezervasyonu")
-    assert response_for_intent("acilis_saatleri")
-    assert response_for_intent("iletisim")
-    assert response_for_intent("odeme_yontemi")
 
 
 def test_health_endpoint() -> None:

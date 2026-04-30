@@ -6,6 +6,7 @@ Turkce bir chatbot icin ilk proje iskeleti. Simdilik elinizdeki `dataset/dataset
 
 - `src/resqai/train.py`: modeli egitir ve `models/intent_model.joblib` olarak kaydeder.
 - `src/resqai/api.py`: FastAPI ile `/chat` ve `/health` endpoint'lerini acar.
+- `src/resqai/menu.py`: ornek coffee menu icerigini tutar.
 - `Dockerfile`: model yoksa once egitir, sonra API'yi baslatir.
 - `.gitignore`: model ciktilarini ve yerel ortam dosyalarini disarida tutar.
 
@@ -40,21 +41,18 @@ curl -X POST http://127.0.0.1:8000/chat -H "Content-Type: application/json" -d "
 ```csv
 metin,niyet
 Menude neler var?,menu_isteme
-Masa ayirtmak istiyorum.,masa_rezervasyonu
+Hamburger ne kadar?,fiyat_sorma
+Fistik alerjim var ne onerisiz?,alerjen_oneri_isteme
 ```
 
-7 intent tuру mevcut:
-- `menu_isteme`: Menu ve yemek listesi sorulari
-- `fiyat_sorma`: Fiyat sorulari
-- `alerjen_oneri_isteme`: Alerjen ve diyetsel secenekler
-- `masa_rezervasyonu`: Masa ayirtma
-- `acilis_saatleri`: Acilis/kapanış saatleri
-- `iletisim`: Adres, telefon gibi iletisim bilgileri
-- `odeme_yontemi`: Odeme secenekleri
+3 ana intent sinifi:
+- `menu_isteme`: Menu, yemek listesi, seçenekler
+- `fiyat_sorma`: Fiyat ve ücretlendirilme soruları
+- `alerjen_oneri_isteme`: Allerji, diyetsel tercihler, malzeme bilgileri
 
 Veri ekledikten sonra modeli yeniden egitmek icin:
 
 ```bash
-docker exec resqai-resqai python -m resqai.train
+docker exec resqai-api python -m resqai.train
 ```
 
