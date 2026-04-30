@@ -8,6 +8,7 @@ from dataclasses import dataclass
 class ExtractedEntities:
     alerjenler: list[str]
     kategori: str | None
+    kategoriler: list[str]
     fiyat_min: int | None
     fiyat_max: int | None
 
@@ -35,6 +36,13 @@ CATEGORY_KEYWORDS = {
     "salata": ["salata", "sezar", "roka", "coban", "çoban", "akdeniz"],
     "ana_yemek": ["ana yemek", "ızgara", "izgara", "burger", "köfte", "kofte", "tavuk sis", "tavuk şiş", "somon", "fajita", "makarna", "noodle"],
     "tatli": ["tatli", "tatlı", "dessert", "kek", "brownie", "cheesecake", "tiramisu", "waffle", "profiterol", "dondurma", "sorbe"],
+    "pizza": ["pizza", "margherita", "pepperoni"],
+    "wrap": ["wrap", "dürüm", "durum"],
+    "corba": ["çorba", "corba", "mercimek", "domates çorbası", "domates corbasi", "mantar çorbası", "tavuk suyu"],
+    "cocuk_menu": ["çocuk menüsü", "cocuk menusu", "kids", "çocuk", "cocuk"],
+    "vegan": ["vegan", "buddha bowl", "vegan burger", "vegan wrap"],
+    "burger": ["burger", "cheeseburger", "bbq burger", "double burger"],
+    "makarna": ["makarna", "pesto", "fettucine", "penne", "alfredo"],
 }
 
 
@@ -70,6 +78,29 @@ def extract_category(text: str) -> str | None:
     return None
 
 
+def extract_categories(text: str) -> list[str]:
+    """
+    Metinden birden fazla kategori cikart.
+    Cikti: kategori listesi
+    """
+    text_lower = text.lower()
+    found_categories = []
+
+    for category_key, keywords in CATEGORY_KEYWORDS.items():
+        for keyword in keywords:
+            if keyword in text_lower:
+                found_categories.append(category_key)
+                break
+
+    # Sirayi koruyup tekrar edenleri temizle
+    deduped = []
+    for category in found_categories:
+        if category not in deduped:
+            deduped.append(category)
+
+    return deduped
+
+
 def extract_price_range(text: str) -> tuple[int | None, int | None]:
     """
     Metinden fiyat araligini cikar.
@@ -96,11 +127,13 @@ def extract_entities(text: str) -> ExtractedEntities:
     """
     alerjenler = extract_allergens(text)
     kategori = extract_category(text)
+    kategoriler = extract_categories(text)
     fiyat_min, fiyat_max = extract_price_range(text)
 
     return ExtractedEntities(
         alerjenler=alerjenler,
         kategori=kategori,
+        kategoriler=kategoriler,
         fiyat_min=fiyat_min,
         fiyat_max=fiyat_max,
     )

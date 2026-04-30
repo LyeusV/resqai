@@ -65,6 +65,38 @@
     {"id": 55, "isim": "Profiterol", "kategori": "tatli", "fiyat": 150, "icerik": ["hamur", "kremaşanti", "cikolata"], "alerjenler": ["sut", "gluten", "yumurta"]},
     {"id": 56, "isim": "Vegan Hurmali Toplar", "kategori": "tatli", "fiyat": 130, "icerik": ["hurma", "hindistan_cevizi", "kakao"], "alerjenler": ["hindistan_cevizi"]},
     {"id": 57, "isim": "Dondurma Kup", "kategori": "tatli", "fiyat": 120, "icerik": ["sut", "vanilya", "cilek"], "alerjenler": ["sut"]},
-    {"id": 58, "isim": "Limon Sorbe", "kategori": "tatli", "fiyat": 115, "icerik": ["limon", "seker", "su"], "alerjenler": []}
+    {"id": 58, "isim": "Limon Sorbe", "kategori": "tatli", "fiyat": 115, "icerik": ["limon", "seker", "su"], "alerjenler": []},
+
+    {"id": 59, "isim": "Margherita Pizza", "kategori": "pizza", "fiyat": 210, "icerik": ["hamur", "domates_sosu", "mozzarella", "feslegen"], "alerjenler": ["gluten", "sut"]},
+    {"id": 60, "isim": "Pepperoni Pizza", "kategori": "pizza", "fiyat": 240, "icerik": ["hamur", "domates_sosu", "mozzarella", "pepperoni"], "alerjenler": ["gluten", "sut"]},
+    {"id": 61, "isim": "Sebzeli Pizza", "kategori": "pizza", "fiyat": 225, "icerik": ["hamur", "domates_sosu", "mozzarella", "sebze"], "alerjenler": ["gluten", "sut"]},
+    {"id": 62, "isim": "Tavuklu Pizza", "kategori": "pizza", "fiyat": 245, "icerik": ["hamur", "domates_sosu", "mozzarella", "tavuk"], "alerjenler": ["gluten", "sut"]},
+
+    {"id": 63, "isim": "Chicken Wrap", "kategori": "wrap", "fiyat": 175, "icerik": ["tortilla", "tavuk", "marul", "sos"], "alerjenler": ["gluten"]},
+    {"id": 64, "isim": "Falafel Wrap", "kategori": "wrap", "fiyat": 165, "icerik": ["tortilla", "falafel", "marul", "humus"], "alerjenler": ["gluten", "susam"]},
+    {"id": 65, "isim": "Etli Wrap", "kategori": "wrap", "fiyat": 185, "icerik": ["tortilla", "dana_et", "marul", "sos"], "alerjenler": ["gluten"]},
+    {"id": 66, "isim": "Vegan Wrap", "kategori": "wrap", "fiyat": 160, "icerik": ["tortilla", "avokado", "roka", "sebze"], "alerjenler": ["gluten"]},
+
+    {"id": 67, "isim": "Domates Çorbası", "kategori": "corba", "fiyat": 75, "icerik": ["domates", "krema", "tereyag"], "alerjenler": ["sut"]},
+    {"id": 68, "isim": "Mercimek Çorbası", "kategori": "corba", "fiyat": 70, "icerik": ["mercimek", "havuc", "soğan"], "alerjenler": []},
+    {"id": 69, "isim": "Mantar Çorbası", "kategori": "corba", "fiyat": 85, "icerik": ["mantar", "krema", "baharat"], "alerjenler": ["sut"]},
+    {"id": 70, "isim": "Tavuk Suyu Çorba", "kategori": "corba", "fiyat": 90, "icerik": ["tavuk", "terbiye", "sehriye"], "alerjenler": ["gluten", "yumurta"]},
+
+    {"id": 71, "isim": "Kids Burger", "kategori": "cocuk_menu", "fiyat": 145, "icerik": ["dana_et", "ekmek", "patates"], "alerjenler": ["gluten"]},
+    {"id": 72, "isim": "Kids Nuggets", "kategori": "cocuk_menu", "fiyat": 135, "icerik": ["tavuk", "galeta_unu", "patates"], "alerjenler": ["gluten"]},
+    {"id": 73, "isim": "Kids Makarna", "kategori": "cocuk_menu", "fiyat": 125, "icerik": ["makarna", "domates_sosu", "peynir"], "alerjenler": ["gluten", "sut"]},
+
+    {"id": 74, "isim": "Vegan Buddha Bowl", "kategori": "vegan", "fiyat": 190, "icerik": ["kinoa", "avokado", "sebze", "humus"], "alerjenler": ["susam"]},
+    {"id": 75, "isim": "Vegan Burger", "kategori": "vegan", "fiyat": 205, "icerik": ["vegan_köfte", "ekmek", "marul", "domates"], "alerjenler": ["gluten"]},
+    {"id": 76, "isim": "Vegan Makarna", "kategori": "vegan", "fiyat": 180, "icerik": ["makarna", "sebze", "zeytinyagi"], "alerjenler": ["gluten"]},
+
+    {"id": 77, "isim": "Klasik Cheeseburger", "kategori": "burger", "fiyat": 220, "icerik": ["dana_et", "ekmek", "cheddar", "turşu"], "alerjenler": ["gluten", "sut"]},
+    {"id": 78, "isim": "BBQ Burger", "kategori": "burger", "fiyat": 235, "icerik": ["dana_et", "ekmek", "barbeku_sos", "peynir"], "alerjenler": ["gluten", "sut"]},
+    {"id": 79, "isim": "Double Burger", "kategori": "burger", "fiyat": 255, "icerik": ["iki_dana_kofte", "ekmek", "peynir"], "alerjenler": ["gluten", "sut"]},
+
+    {"id": 80, "isim": "Pesto Makarna", "kategori": "makarna", "fiyat": 195, "icerik": ["makarna", "pesto", "parmesan"], "alerjenler": ["gluten", "sut", "kuruyemis"]},
+    {"id": 81, "isim": "Napoliten Makarna", "kategori": "makarna", "fiyat": 185, "icerik": ["makarna", "domates_sosu", "feslegen"], "alerjenler": ["gluten"]},
+    {"id": 82, "isim": "Mantarlı Fettucine", "kategori": "makarna", "fiyat": 205, "icerik": ["fettucine", "mantar", "krema"], "alerjenler": ["gluten", "sut"]},
+    {"id": 83, "isim": "Tavuklu Penne", "kategori": "makarna", "fiyat": 210, "icerik": ["penne", "tavuk", "krema", "baharat"], "alerjenler": ["gluten", "sut"]}
   ]
 }

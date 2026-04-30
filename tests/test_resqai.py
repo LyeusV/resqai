@@ -7,7 +7,7 @@ from fastapi.testclient import TestClient
 from resqai.api import app
 from resqai.model import load_dataset
 from resqai.responses import response_for_intent
-from resqai.entities import extract_entities, extract_allergens, extract_category, extract_price_range
+from resqai.entities import extract_entities, extract_allergens, extract_category, extract_categories, extract_price_range
 from resqai.repository import MenuRepository
 
 
@@ -91,6 +91,38 @@ def test_extract_category_finds_atistirmalik() -> None:
     assert category == "atistirmalik"
 
 
+def test_extract_category_finds_pizza() -> None:
+    category = extract_category("Pizza var mi?")
+    assert category == "pizza"
+
+
+def test_extract_category_finds_wrap() -> None:
+    category = extract_category("Wrap önerir misiniz?")
+    assert category == "wrap"
+
+
+def test_extract_category_finds_corba() -> None:
+    category = extract_category("Corba neler var?")
+    assert category == "corba"
+
+
+def test_extract_category_finds_vegan() -> None:
+    category = extract_category("Vegan yemekler nelerdir?")
+    assert category == "vegan"
+
+
+def test_extract_categories_finds_multiple() -> None:
+    categories = extract_categories("Pizza ve wrap var mi?")
+    assert "pizza" in categories
+    assert "wrap" in categories
+
+
+def test_extract_categories_finds_corba_and_main() -> None:
+    categories = extract_categories("Corba ve ana yemekler neler?")
+    assert "corba" in categories
+    assert "ana_yemek" in categories
+
+
 def test_extract_category_returns_none_when_none() -> None:
     category = extract_category("Fiyat ne kadar?")
     assert category is None
@@ -152,6 +184,27 @@ def test_repository_get_by_category_ana_yemek() -> None:
     items = repo.get_by_category("ana_yemek")
     assert len(items) > 0
     assert all(item.get("kategori") == "ana_yemek" for item in items)
+
+
+def test_repository_get_by_category_pizza() -> None:
+    repo = MenuRepository()
+    items = repo.get_by_category("pizza")
+    assert len(items) > 0
+    assert all(item.get("kategori") == "pizza" for item in items)
+
+
+def test_repository_get_by_category_wrap() -> None:
+    repo = MenuRepository()
+    items = repo.get_by_category("wrap")
+    assert len(items) > 0
+    assert all(item.get("kategori") == "wrap" for item in items)
+
+
+def test_repository_get_by_category_corba() -> None:
+    repo = MenuRepository()
+    items = repo.get_by_category("corba")
+    assert len(items) > 0
+    assert all(item.get("kategori") == "corba" for item in items)
 
 
 def test_repository_get_safe_for_allergens() -> None:

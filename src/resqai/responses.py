@@ -12,11 +12,14 @@ _repo = MenuRepository()
 def handle_menu_request(user_message: str) -> str:
     """Menu isteme intentini yanit ver."""
     entities = extract_entities(user_message)
+    matched_categories = entities.kategoriler or ([entities.kategori] if entities.kategori else [])
 
     # Kategori varsa ona gore filtrele, yoksa tum menuyu goster
-    if entities.kategori:
-        items = _repo.get_by_category(entities.kategori)
-        category_display = entities.kategori.replace("_", " ")
+    if matched_categories:
+        items = []
+        for category in matched_categories:
+            items.extend(_repo.get_by_category(category))
+        category_display = ", ".join(category.replace("_", " ") for category in matched_categories)
         prefix = f"{category_display.upper()} SECENEKLERI:\n"
     else:
         items = _repo.get_all_items()
@@ -25,7 +28,7 @@ def handle_menu_request(user_message: str) -> str:
     if not items:
         return "Bu kategoride urun bulunamadi."
 
-    if entities.kategori:
+    if matched_categories:
         menu_text = _repo.format_items_as_text(items)
         return prefix + menu_text
 
