@@ -4,3 +4,4 @@ joblib>=1.4.0
 fastapi>=0.115.0
 uvicorn[standard]>=0.30.0
 pydantic>=2.7.0
+pytest>=8.3.0

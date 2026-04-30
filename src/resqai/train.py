@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+from typing import Any
 
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
@@ -16,16 +17,26 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+def split_dataset(data: Any):
+    if len(data) < 4 or data["niyet"].nunique() < 2:
+        return data, data
+
+    try:
+        return train_test_split(
+            data,
+            test_size=0.2,
+            random_state=42,
+            stratify=data["niyet"] if data["niyet"].nunique() > 1 else None,
+        )
+    except ValueError:
+        return train_test_split(data, test_size=0.2, random_state=42)
+
+
 def main() -> None:
     args = parse_args()
     data = load_dataset(args.dataset)
 
-    train_data, test_data = train_test_split(
-        data,
-        test_size=0.2,
-        random_state=42,
-        stratify=data["niyet"] if data["niyet"].nunique() > 1 else None,
-    )
+    train_data, test_data = split_dataset(data)
 
     model = train_model(train_data)
     predictions = model.predict(test_data["metin"])
