@@ -182,13 +182,14 @@ Asama 3 - Kalite guvencesi ✅ TAMAMLANDI
 
 ## 8) Orta/Uzun Vadeli Yol Haritasi
 
-Asama 4 - React Frontend (Siradaki)
+Asama 4 - React Frontend (Basladi)
 
-- React ile interaktif web arayuzu
+- React + Vite ile interaktif web arayuzu
 - Kullanici input alanı (mesaj kutusu)
 - Response goruntuleme (intent + cevap)
-- Opsiyonel: Onerilen urunlerin visual listesi
+- Hızlı prompt butonları
 - API cagrilari (http://localhost:8000/chat POST)
+- Frontend klasörü ve Docker Compose servisleri eklendi
 
 Asama 5 - Deployment + Yayin
 

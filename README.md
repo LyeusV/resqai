@@ -11,6 +11,7 @@ Detaylı teknik dokuman ve yol haritası için: [docs/PROJE_MIMARISI_VE_YOL_HARI
 - **Menu Repository:** JSON-based sorgu ve filtreleme
 - **Dinamik Cevaplar:** Şablon tabanlı yanıtlar, kullanıcı girişine göre özelleştirilmiş
 - **Kalite Güvencesi:** Dataset analiz, training metrik logging, birim testler
+- **Frontend:** React + Vite chat arayüzü
 
 ## Dosya Yapısı
 
@@ -24,6 +25,7 @@ Detaylı teknik dokuman ve yol haritası için: [docs/PROJE_MIMARISI_VE_YOL_HARI
 - `data/menu.json` - Menu bilgi bankası
 - `dataset/dataset.csv` - Eğitim verisi
 - `training_logs/metrics.jsonl` - Egitim metrikleri
+- `frontend/` - React/Vite web arayüzü
 
 ## Hızlı Başlangıç
 
@@ -32,6 +34,11 @@ Detaylı teknik dokuman ve yol haritası için: [docs/PROJE_MIMARISI_VE_YOL_HARI
 ```bash
 docker compose up --build
 ```
+
+Bu komut hem backend API'yi hem de React frontend'i ayağa kaldırır:
+
+- API: http://localhost:8000
+- Frontend: http://localhost:5173
 
 ### Model Eğitimi
 
@@ -61,6 +68,18 @@ curl -X POST http://localhost:8000/chat \
   "reply": "TATLI SECENEKLERI:\n- San Sebastian: 170 TL\n- Brownie: 145 TL\n- Vegan Hurmali Toplar: 130 TL"
 }
 ```
+
+### Frontend Kullanımı
+
+`frontend/` klasörüne girip bağımsız olarak da çalıştırabilirsin:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Tarayıcıdan açılacak ekran, chat geçmişini gösterir ve hızlı prompt butonlarıyla test yapmanı sağlar.
 
 ## Veri Seti Genişletme
 

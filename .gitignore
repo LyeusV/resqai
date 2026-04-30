@@ -12,6 +12,8 @@ htmlcov/
 models/*.joblib
 models/*.pkl
 training_logs/
+frontend/node_modules/
+frontend/dist/
 dist/
 build/
 *.egg-info/
