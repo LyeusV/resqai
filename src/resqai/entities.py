@@ -27,10 +27,14 @@ ALLERGEN_KEYWORDS = {
 
 # Kategori eslestirme sozlugu
 CATEGORY_KEYWORDS = {
-    "kahve": ["kahve", "espresso", "latte", "cappuccino"],
-    "soguk_icecek": ["soguk", "buz", "ice", "cold"],
-    "yiyecek": ["sandvic", "salata", "yulaf"],
-    "tatli": ["tatli", "dessert", "kek", "brownie"],
+    "kahve": ["kahve", "espresso", "latte", "cappuccino", "americano", "mocha", "macchiato", "flat white", "filtre kahve"],
+    "sicak_icecek": ["sicak icecek", "sıcak içecek", "sicak içecek", "çay", "cay", "salep", "hot chocolate", "sicak cikolata", "bitki çayı", "bitki cayi", "türk kahvesi", "turk kahvesi"],
+    "soguk_icecek": ["soğuk içecek", "soguk icecek", "iced", "cold brew", "smoothie", "limonata", "ayran", "ice tea", "iced tea", "buzlu"],
+    "kahvalti": ["kahvalti", "kahvaltı", "serpme", "omlet", "menemen", "tost", "yumurta", "brunch"],
+    "atistirmalik": ["atistirmalik", "atıştırmalık", "snack", "patates", "soğan halkası", "sogan halkasi", "nachos", "bruschetta", "mozzarella"],
+    "salata": ["salata", "sezar", "roka", "coban", "çoban", "akdeniz"],
+    "ana_yemek": ["ana yemek", "ızgara", "izgara", "burger", "köfte", "kofte", "tavuk sis", "tavuk şiş", "somon", "fajita", "makarna", "noodle"],
+    "tatli": ["tatli", "tatlı", "dessert", "kek", "brownie", "cheesecake", "tiramisu", "waffle", "profiterol", "dondurma", "sorbe"],
 }
 
 

@@ -20,13 +20,41 @@ def handle_menu_request(user_message: str) -> str:
         prefix = f"{category_display.upper()} SECENEKLERI:\n"
     else:
         items = _repo.get_all_items()
-        prefix = "TÜNN MENU:\n"
+        prefix = "TUM MENU:\n"
 
     if not items:
         return "Bu kategoride urun bulunamadi."
 
-    menu_text = _repo.format_items_as_text(items)
-    return prefix + menu_text
+    if entities.kategori:
+        menu_text = _repo.format_items_as_text(items)
+        return prefix + menu_text
+
+    grouped: dict[str, list[dict]] = {}
+    for item in items:
+        kategori = item.get("kategori", "diger")
+        grouped.setdefault(kategori, []).append(item)
+
+    lines = ["ResQAI Bistro & Coffee - Genis Menu", ""]
+    category_titles = {
+        "kahve": "Kahveler",
+        "sicak_icecek": "Sicak Icecekler",
+        "soguk_icecek": "Soguk Icecekler",
+        "kahvalti": "Kahvalti",
+        "atistirmalik": "Atistirmaliklar",
+        "salata": "Salatalar",
+        "ana_yemek": "Ana Yemekler",
+        "tatli": "Tatlılar",
+    }
+
+    for kategori, category_items in grouped.items():
+        title = category_titles.get(kategori, kategori.replace("_", " ").title())
+        lines.append(f"{title}:")
+        for item in category_items:
+            lines.append(f"- {item.get('isim', 'Bilinmeyen')}: {item.get('fiyat', 0)} TL")
+        lines.append("")
+
+    lines.append("Alerjen veya fiyat bazli filtreleme icin dogrudan sorabilirsiniz.")
+    return "\n".join(lines)
 
 
 def handle_price_request(user_message: str) -> str:

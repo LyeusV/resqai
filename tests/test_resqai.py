@@ -76,6 +76,21 @@ def test_extract_category_finds_soguk_icecek() -> None:
     assert category == "soguk_icecek"
 
 
+def test_extract_category_finds_sicak_icecek() -> None:
+    category = extract_category("Sicak icecekler neler var?")
+    assert category == "sicak_icecek"
+
+
+def test_extract_category_finds_ana_yemek() -> None:
+    category = extract_category("Ana yemekler neler?")
+    assert category == "ana_yemek"
+
+
+def test_extract_category_finds_atistirmalik() -> None:
+    category = extract_category("Atistirmalik olarak ne var?")
+    assert category == "atistirmalik"
+
+
 def test_extract_category_returns_none_when_none() -> None:
     category = extract_category("Fiyat ne kadar?")
     assert category is None
@@ -123,6 +138,20 @@ def test_repository_get_by_category_kahve() -> None:
     items = repo.get_by_category("kahve")
     assert len(items) > 0
     assert all(item.get("kategori") == "kahve" for item in items)
+
+
+def test_repository_get_by_category_sicak_icecek() -> None:
+    repo = MenuRepository()
+    items = repo.get_by_category("sicak_icecek")
+    assert len(items) > 0
+    assert all(item.get("kategori") == "sicak_icecek" for item in items)
+
+
+def test_repository_get_by_category_ana_yemek() -> None:
+    repo = MenuRepository()
+    items = repo.get_by_category("ana_yemek")
+    assert len(items) > 0
+    assert all(item.get("kategori") == "ana_yemek" for item in items)
 
 
 def test_repository_get_safe_for_allergens() -> None:
