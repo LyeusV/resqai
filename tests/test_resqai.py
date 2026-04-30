@@ -18,9 +18,9 @@ def test_dataset_loads_with_expected_columns() -> None:
 
 
 def test_response_mapping_includes_known_intents() -> None:
-    assert response_for_intent("menu_isteme")
-    assert response_for_intent("fiyat_sorma")
-    assert response_for_intent("alerjen_oneri_isteme")
+    assert response_for_intent("menu_isteme", "Menude neler var?")
+    assert response_for_intent("fiyat_sorma", "Ne kadar?")
+    assert response_for_intent("alerjen_oneri_isteme", "Fistik alerjim var")
 
 
 def test_health_endpoint() -> None:

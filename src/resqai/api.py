@@ -42,5 +42,5 @@ def chat(request: ChatRequest) -> ChatResponse:
         raise HTTPException(status_code=503, detail="Model hazir degil. Once egitim calistirin.")
 
     intent = predict_intent(model, request.message)
-    reply = response_for_intent(intent)
+    reply = response_for_intent(intent, request.message)
     return ChatResponse(message=request.message, intent=intent, reply=reply)

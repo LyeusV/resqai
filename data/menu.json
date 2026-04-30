@@ -1,0 +1,125 @@
+{
+  "restaurant": "ResQAI Coffee",
+  "menu": [
+    {
+      "id": 1,
+      "isim": "Espresso (Single)",
+      "kategori": "kahve",
+      "fiyat": 85,
+      "icerik": ["kahve"],
+      "alerjenler": []
+    },
+    {
+      "id": 2,
+      "isim": "Americano",
+      "kategori": "kahve",
+      "fiyat": 95,
+      "icerik": ["kahve"],
+      "alerjenler": []
+    },
+    {
+      "id": 3,
+      "isim": "Latte",
+      "kategori": "kahve",
+      "fiyat": 115,
+      "icerik": ["kahve", "sut"],
+      "alerjenler": ["sut"]
+    },
+    {
+      "id": 4,
+      "isim": "Cappuccino",
+      "kategori": "kahve",
+      "fiyat": 110,
+      "icerik": ["kahve", "sut"],
+      "alerjenler": ["sut"]
+    },
+    {
+      "id": 5,
+      "isim": "Mocha",
+      "kategori": "kahve",
+      "fiyat": 125,
+      "icerik": ["kahve", "sut", "cikolata"],
+      "alerjenler": ["sut", "cikolata"]
+    },
+    {
+      "id": 6,
+      "isim": "Iced Americano",
+      "kategori": "soguk_icecek",
+      "fiyat": 105,
+      "icerik": ["kahve", "buz"],
+      "alerjenler": []
+    },
+    {
+      "id": 7,
+      "isim": "Cold Brew",
+      "kategori": "soguk_icecek",
+      "fiyat": 120,
+      "icerik": ["kahve", "su"],
+      "alerjenler": []
+    },
+    {
+      "id": 8,
+      "isim": "Iced Latte",
+      "kategori": "soguk_icecek",
+      "fiyat": 125,
+      "icerik": ["kahve", "sut", "buz"],
+      "alerjenler": ["sut"]
+    },
+    {
+      "id": 9,
+      "isim": "Kruvasan",
+      "kategori": "yiyecek",
+      "fiyat": 95,
+      "icerik": ["un", "yumurta", "sut", "yag"],
+      "alerjenler": ["gluten", "yumurta", "sut"]
+    },
+    {
+      "id": 10,
+      "isim": "Avokadolu Sandvic",
+      "kategori": "yiyecek",
+      "fiyat": 165,
+      "icerik": ["ekmek", "avokado", "domatis", "salata"],
+      "alerjenler": ["gluten"]
+    },
+    {
+      "id": 11,
+      "isim": "Ton Balikli Salata",
+      "kategori": "yiyecek",
+      "fiyat": 180,
+      "icerik": ["salata", "ton_balik", "domatis", "salatica"],
+      "alerjenler": ["balik"]
+    },
+    {
+      "id": 12,
+      "isim": "Muzlu Yulaf Bowl",
+      "kategori": "yiyecek",
+      "fiyat": 150,
+      "icerik": ["yulaf", "muz", "bal", "yogurt"],
+      "alerjenler": ["yulaf"]
+    },
+    {
+      "id": 13,
+      "isim": "San Sebastian",
+      "kategori": "tatli",
+      "fiyat": 170,
+      "icerik": ["krema", "peynir", "yumurta", "seker"],
+      "alerjenler": ["sut", "yumurta"]
+    },
+    {
+      "id": 14,
+      "isim": "Brownie",
+      "kategori": "tatli",
+      "fiyat": 145,
+      "icerik": ["un", "cikolata", "yumurta", "yag"],
+      "alerjenler": ["gluten", "yumurta"]
+    },
+    {
+      "id": 15,
+      "isim": "Vegan Hurmali Toplar",
+      "kategori": "tatli",
+      "fiyat": 130,
+      "icerik": ["hurma", "hindistan_cevizi", "vegan_yag"],
+      "alerjenler": ["hindistan_cevizi"]
+    }
+  ]
+}

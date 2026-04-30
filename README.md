@@ -2,6 +2,8 @@
 
 Turkce bir chatbot icin ilk proje iskeleti. Simdilik elinizdeki `dataset/dataset.csv` dosyasindan intent siniflandiran hafif bir baseline var.
 
+Detayli teknik dokuman ve yol haritasi icin: `docs/PROJE_MIMARISI_VE_YOL_HARITASI.md`
+
 ## Ne var?
 
 - `src/resqai/train.py`: modeli egitir ve `models/intent_model.joblib` olarak kaydeder.
