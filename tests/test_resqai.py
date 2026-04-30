@@ -6,7 +6,7 @@ from fastapi.testclient import TestClient
 
 from resqai.api import app
 from resqai.model import load_dataset
-from resqai.responses import response_for_intent
+from resqai.responses import response_for_intent, handle_menu_request
 from resqai.entities import extract_entities, extract_allergens, extract_category, extract_categories, extract_price_range
 from resqai.repository import MenuRepository
 
@@ -51,6 +51,18 @@ def test_extract_allergens_finds_gluten() -> None:
 
 def test_extract_allergens_finds_sut() -> None:
     text = "Sut icermeyen tatli onerir misiniz?"
+    allergens = extract_allergens(text)
+    assert "sut" in allergens
+
+
+def test_extract_allergens_finds_turkish_sut() -> None:
+    text = "Süt alerjim var"
+    allergens = extract_allergens(text)
+    assert "sut" in allergens
+
+
+def test_extract_allergens_finds_sutsuz() -> None:
+    text = "Sütsüz kahve öner"
     allergens = extract_allergens(text)
     assert "sut" in allergens
 
@@ -248,3 +260,11 @@ def test_repository_format_items_as_text() -> None:
     text = repo.format_items_as_text(items)
     assert len(text) > 0
     assert "TL" in text
+
+
+def test_handle_menu_request_filters_sut_in_kahve() -> None:
+    reply = handle_menu_request("Sütsüz kahve öner")
+    assert "Latte" not in reply
+    assert "Cappuccino" not in reply
+    assert "Mocha" not in reply
+    assert "Espresso" in reply

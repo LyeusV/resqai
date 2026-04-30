@@ -28,6 +28,16 @@ def handle_menu_request(user_message: str) -> str:
     if not items:
         return "Bu kategoride urun bulunamadi."
 
+    if entities.alerjenler:
+        requested = set(entities.alerjenler)
+        items = [
+            item
+            for item in items
+            if not requested.intersection(set(item.get("alerjenler", [])))
+        ]
+        if not items:
+            return "Belirttiginiz alerjenlere gore uygun urun bulunamadi."
+
     if matched_categories:
         menu_text = _repo.format_items_as_text(items)
         return prefix + menu_text
@@ -86,19 +96,20 @@ def handle_price_request(user_message: str) -> str:
 def handle_allergen_request(user_message: str) -> str:
     """Alerjen oneri intentini yanit ver."""
     entities = extract_entities(user_message)
+    matched_categories = entities.kategoriler or ([entities.kategori] if entities.kategori else [])
 
     if not entities.alerjenler:
-        return "Alerijen bilgisi yakalanamamistir. Lutfen hangi alerjenlerden kacmak istediginizi belirtin."
+        return "Alerjen bilgisi yakalanamadi. Lutfen hangi alerjenlerden kacmak istediginizi belirtin."
 
     allergen_display = ", ".join(entities.alerjenler)
     items = _repo.get_safe_for_allergens(entities.alerjenler)
 
-    if not entities.kategori:
-        prefix = f"{allergen_display} alerjisi icin GUVENLI SECEEKLER:\n"
+    if not matched_categories:
+        prefix = f"{allergen_display} alerjisi icin GUVENLI SECENEKLER:\n"
     else:
-        category_display = entities.kategori.replace("_", " ")
+        category_display = ", ".join(category.replace("_", " ") for category in matched_categories)
         prefix = f"{allergen_display} alerjisi icin {category_display} KATEGORI SECENEKLERI:\n"
-        items = [item for item in items if item.get("kategori") == entities.kategori]
+        items = [item for item in items if item.get("kategori") in matched_categories]
 
     if not items:
         return f"{allergen_display} alerjisi icin bu kategoride guvenli urun bulunamadi."

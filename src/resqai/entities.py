@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import unicodedata
 from dataclasses import dataclass
 
 
@@ -17,7 +18,7 @@ class ExtractedEntities:
 ALLERGEN_KEYWORDS = {
     "fistik": ["fistik", "yer fistigi"],
     "gluten": ["gluten", "un"],
-    "sut": ["sut", "yogurt", "peynir", "krem", "kremali"],
+    "sut": ["sut", "sutsuz", "laktozsuz", "yogurt", "peynir", "krem", "kremali"],
     "yumurta": ["yumurta"],
     "balik": ["balik", "ton", "somon"],
     "kabuklu": ["karides", "istiridye"],
@@ -25,6 +26,17 @@ ALLERGEN_KEYWORDS = {
     "hindistan_cevizi": ["hindistan cevizi", "hindistancevizi"],
     "cikolata": ["cikolata", "kakao"],
 }
+
+
+def normalize_text(text: str) -> str:
+    """
+    Turkce karakterleri ve aksanli harfleri normalize ederek
+    kurallarin daha stabil calismasini saglar.
+    """
+    lowered = text.lower()
+    normalized = unicodedata.normalize("NFKD", lowered)
+    ascii_text = "".join(ch for ch in normalized if not unicodedata.combining(ch))
+    return ascii_text
 
 # Kategori eslestirme sozlugu
 CATEGORY_KEYWORDS = {
@@ -51,12 +63,12 @@ def extract_allergens(text: str) -> list[str]:
     Metinden alerjen isimleri cikar.
     Cikti: liste (Ornek: ["fistik", "gluten"])
     """
-    text_lower = text.lower()
+    text_lower = normalize_text(text)
     found_allergens = set()
 
     for allergen_key, keywords in ALLERGEN_KEYWORDS.items():
         for keyword in keywords:
-            if keyword in text_lower:
+            if normalize_text(keyword) in text_lower:
                 found_allergens.add(allergen_key)
                 break
 
@@ -68,11 +80,11 @@ def extract_category(text: str) -> str | None:
     Metinden kategori cikart.
     Cikti: kategori adi veya None
     """
-    text_lower = text.lower()
+    text_lower = normalize_text(text)
 
     for category_key, keywords in CATEGORY_KEYWORDS.items():
         for keyword in keywords:
-            if keyword in text_lower:
+            if normalize_text(keyword) in text_lower:
                 return category_key
 
     return None
@@ -83,12 +95,12 @@ def extract_categories(text: str) -> list[str]:
     Metinden birden fazla kategori cikart.
     Cikti: kategori listesi
     """
-    text_lower = text.lower()
+    text_lower = normalize_text(text)
     found_categories = []
 
     for category_key, keywords in CATEGORY_KEYWORDS.items():
         for keyword in keywords:
-            if keyword in text_lower:
+            if normalize_text(keyword) in text_lower:
                 found_categories.append(category_key)
                 break
 
