@@ -1,0 +1,31 @@
+metin,niyet
+Menüde neler var?,menu_isteme
+Yemek listesini görebilir miyim?,menu_isteme
+Neler yiyebiliriz?,menu_isteme
+Bugün neyiniz var?,menu_isteme
+Bana menüyü getirir misin?,menu_isteme
+Neler satıyorsunuz?,menu_isteme
+Menü alabilir miyim lütfen?,menu_isteme
+Hangi yemekleriniz var?,menu_isteme
+Restoranınızda ne yenir?,menu_isteme
+Yemek seçeneklerini görmek istiyorum.,menu_isteme
+Hamburger ne kadar?,fiyat_sorma
+Çorbanın fiyatı nedir?,fiyat_sorma
+En ucuz tatlı hangisi?,fiyat_sorma
+Fiyat listeniz var mı?,fiyat_sorma
+Pizzalar kaç lira?,fiyat_sorma
+Hesap ortalama ne kadar gelir?,fiyat_sorma
+Kebap fiyatını öğrenebilir miyim?,fiyat_sorma
+Fiyatlar nasıl?,fiyat_sorma
+İçecekler ücretli mi?,fiyat_sorma
+Tatlıların fiyatını söyler misin?,fiyat_sorma
+Fıstık alerjim var ne önerirsiniz?,alerjen_oneri_isteme
+Sütsüz tatlılarınız neler?,alerjen_oneri_isteme
+Gluten içermeyen ana yemek var mı?,alerjen_oneri_isteme
+Vegan seçeneklerinizde neler var?,alerjen_oneri_isteme
+Süt ürünleri dokunuyor ne yiyebilirim?,alerjen_oneri_isteme
+İçinde yumurta olmayan bir şey arıyorum.,alerjen_oneri_isteme
+Ceviz alerjim var hangi tatlıyı yiyebilirim?,alerjen_oneri_isteme
+Glutensiz pizza yapıyor musunuz?,alerjen_oneri_isteme
+Laktozsuz içecekleriniz hangileri?,alerjen_oneri_isteme
+Deniz ürünü alerjisi olan biri ne yiyebilir?,alerjen_oneri_isteme
