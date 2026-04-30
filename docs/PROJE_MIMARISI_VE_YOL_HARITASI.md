@@ -35,18 +35,31 @@ Asagidaki bolumler aktif durumda:
 
 - Intent modeli:
   - TfidfVectorizer (1-2 gram) + LogisticRegression
-  - Dataset: dataset/dataset.csv
+  - Dataset: dataset/dataset.csv (541 satir, 3 intent sinifi)
   - Model cikti dosyasi: models/intent_model.joblib
 - Egitim pipeline:
-  - Train/test split + classification report
+  - Train/test split (80/20, random_state=42, stratified)
+  - Classification report
+  - Metrics logging (training_logs/metrics.jsonl)
+- Rule-based varlık cikartimi (entities.py):
+  - Alerjen keyword matching (fistik, gluten, sut vb.)
+  - Kategori matching (kahve, soguk_icecek, yiyecek, tatli)
+  - Fiyat regex-based cikarimi
+- Menu repository (repository.py):
+  - data/menu.json sorgulama
+  - Kategori/alerjen/fiyat filtrelemeleri
+  - Dinamik metin uretimi
 - API katmani:
   - FastAPI ile /health ve /chat endpointleri
+  - User message'ine dayali entity-driven cevaplar
 - Docker-first calisma:
   - Dockerfile + docker-compose ile calisiyor
-- Ornek menu donusu:
-  - menu_isteme intentinde ornek coffee menu metni donduruluyor
+- Kalite guvencesi:
+  - 24 adet birim test (entity + repository + API)
+  - Dataset kalite analiz modulu (duplicates, empty values, class balance)
+  - Training metrik logu (timestamp, accuracy, F1, class-wise metrics, model params)
 
-En son alinan metrik (paylasilan ciktiya gore):
+En son alinan metrik (Asama 3 egitimi sonrasi):
 
 - Accuracy: 0.92
 - Macro F1: 0.92
@@ -54,8 +67,9 @@ En son alinan metrik (paylasilan ciktiya gore):
   - alerjen_oneri_isteme: 0.91
   - fiyat_sorma: 0.96
   - menu_isteme: 0.89
+- Dataset Kalite: FAIR (210 duplicate var, ama class dagitimi dengeli)
 
-Bu skorlar mevcut veri dagilimi icin baseline ustunde iyi bir seviyededir.
+Bu skorlar mevcut veri dagilimi icin iyi bir seviyededir.
 
 ## 4) Spesifikasyon ile Karsilastirma
 
@@ -80,11 +94,9 @@ Bu skorlar mevcut veri dagilimi icin baseline ustunde iyi bir seviyededir.
 
 ### 4.3 Henuz Eksik Olanlar
 
-- Entity extraction modulu (keyword/regex)
-- menu.json semasina dayali gercek filtreleme mantigi
-- Alerjen bazli dinamik sorgu + cevap uretimi
 - Intent confidence esigi ve fallback stratejisi
-- Egitim metriklerini kalici loglama
+- Daha genis varlık cikartimi (ornek: kisi/grup boyutu vs.)
+- Conversational context (multi-turn chat memory)
 
 ## 5) Hedef Mimarinin Net Tanimı
 
@@ -121,46 +133,70 @@ Asagidaki yapi, mevcut projeyi bozmadan gelistirme icin onerilir:
 - dataset/
   - dataset.csv
 - data/
-  - menu.json
-  - entity_lexicon.json (opsiyonel)
+  - menu.json (urun bilgi bankasi)
+- training_logs/
+  - metrics.jsonl (egitim metrikleri, tarih+saat bazli)
 - src/resqai/
   - api.py
   - model.py
   - train.py
-  - preprocess.py
-  - entities.py
-  - rules.py
-  - repository.py
-  - responses.py
+  - preprocess.py (opsiyonel)
+  - entities.py (keyword/regex extraction)
+  - repository.py (menu.json sorgulama)
+  - responses.py (entity-driven responses)
+  - metrics.py (training metrics logging)
+  - dataset_quality.py (kalite analiz)
 
 Not: Gercek veritabani su an hedef degil. Lokal JSON/CSV ile devam edilecek.
 
 ## 7) Kisa Vadeli Uygulama Plani
 
-Asama 1 - Stabil MVP (simdi)
+Asama 1 - Stabil MVP ✅ TAMAMLANDI
 
 - Mevcut model + API akisini koru
-- menu.json dosyasini ekle
+- menu.json dosyasini ekle (15 ornek urun)
 - responses tarafinda static menu yerine JSON sorgusu kullan
 
-Asama 2 - Rule-based zenginlestirme
+Asama 2 - Rule-based zenginlestirme ✅ TAMAMLANDI
 
-- entities.py ile alerjen/kategori cikarimi
+- entities.py ile alerjen/kategori cikarimi (keyword-based)
 - alerjen_oneri_isteme niyetinde filtrelenmis liste don
 - fiyat_sorma niyetinde urun bazli fiyat yakalama
+- repository.py ile menu.json sorgulama ve filtreleme
 
-Asama 3 - Kalite guvencesi
+Asama 3 - Kalite guvencesi ✅ TAMAMLANDI
 
-- Unit test sayisini artir
-- Dataset kalite kontrolu (tekrarlanan/supheli etiket)
-- Model metrik logu (her egitimde tarih + skor)
+- Unit test sayisini 5'den 24'e cikart (entity + repository testleri)
+- Dataset kalite kontrolu modulu (dataset_quality.py)
+  - Duplicate kontrol
+  - Bos deger kontrol
+  - Class dagitimi analizi
+  - Metin uzunluk istatistikleri
+  - Genel kalite skoru (GOOD/FAIR/POOR)
+- Model metrik logu (metrics.py + metrics.jsonl)
+  - Tarih/timestamp
+  - Accuracy + macro avg metrikleri
+  - Class-wise metrics (precision/recall/f1/support)
+  - Dataset boyutu ve train/test split
+  - Model parametreleri
 
 ## 8) Orta/Uzun Vadeli Yol Haritasi
 
-Frontend:
+Asama 4 - React Frontend (Siradaki)
 
-- React ile web arayuzu gelistirilecek
-- Chat kutusu + intent sonucu + onerilen urun listesi gosterilecek
+- React ile interaktif web arayuzu
+- Kullanici input alanı (mesaj kutusu)
+- Response goruntuleme (intent + cevap)
+- Opsiyonel: Onerilen urunlerin visual listesi
+- API cagrilari (http://localhost:8000/chat POST)
+
+Asama 5 - Deployment + Yayin
+
+- Docker image'i production icin optimize et
+- Nginx reverse proxy ile HTTPS
+- resqai.lyeusv.com domain'e yayinla
+- Let's Encrypt SSL sertifikasi
+- CI/CD pipeline (ileride)
 
 Backend:
 
