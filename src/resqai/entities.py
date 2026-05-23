@@ -21,10 +21,11 @@ ALLERGEN_KEYWORDS = {
     "sut": ["sut", "sutsuz", "laktozsuz", "yogurt", "peynir", "krem", "kremali"],
     "yumurta": ["yumurta"],
     "balik": ["balik", "ton", "somon"],
-    "kabuklu": ["karides", "istiridye"],
-    "yulaf": ["yulaf"],
     "hindistan_cevizi": ["hindistan cevizi", "hindistancevizi"],
     "cikolata": ["cikolata", "kakao"],
+    "susam": ["susam", "tahin"],
+    "soya": ["soya", "soya sutu", "soya sosu"],
+    "kuruyemis": ["kuruyemis", "ceviz", "findik", "badem", "kaju"],
 }
 
 

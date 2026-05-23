@@ -76,6 +76,22 @@ def test_extract_allergens_returns_empty_when_none() -> None:
     assert len(allergens) == 0
 
 
+def test_extract_allergens_finds_soya() -> None:
+    assert "soya" in extract_allergens("Soya sosu veya soya sütü var mı?")
+
+
+def test_extract_allergens_finds_susam() -> None:
+    assert "susam" in extract_allergens("Tahin veya susam içeriyor mu?")
+
+
+def test_extract_allergens_finds_kuruyemis() -> None:
+    assert "kuruyemis" in extract_allergens("Ceviz, fındık, badem veya kuruyemiş alerjim var")
+
+
+def test_extract_allergens_finds_cikolata() -> None:
+    assert "cikolata" in extract_allergens("Çikolata ve kakao içermeyen tatlılar")
+
+
 def test_extract_category_finds_tatli() -> None:
     category = extract_category("Tatli menusu neler?")
     assert category == "tatli"

@@ -8,6 +8,9 @@ from pydantic import BaseModel, Field
 
 from .model import DEFAULT_MODEL_PATH, load_model, predict_intent
 from .responses import response_for_intent
+from .repository import MenuRepository
+
+_repo = MenuRepository()
 
 
 class ChatRequest(BaseModel):
@@ -43,6 +46,11 @@ app.add_middleware(
 @app.get("/health")
 def health() -> dict[str, bool]:
     return {"ok": True}
+
+
+@app.get("/menu")
+def get_menu() -> dict:
+    return _repo.data
 
 
 import time

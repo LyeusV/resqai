@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_MENU_PATH = PROJECT_ROOT / "data" / "menu.json"
+DEFAULT_MENU_PATH = PROJECT_ROOT / "menu" / "menu.json"
 
 
 class MenuRepository:
