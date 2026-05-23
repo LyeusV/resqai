@@ -86,8 +86,8 @@ class MenuRepository:
 
         # Alerjen
         if alerjenler:
-            items = self.get_safe_for_allergens(alerjenler)
-            items = [item for item in items if item in self.get_all_items()]
+            safe_items = self.get_safe_for_allergens(alerjenler)
+            items = [item for item in items if item in safe_items]
 
         # Fiyat
         if fiyat_min is not None:

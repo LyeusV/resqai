@@ -3,16 +3,20 @@ from __future__ import annotations
 from .entities import extract_entities
 from .repository import MenuRepository
 
-DEFAULT_FALLBACK = "Bunu tam anlayamadim. Farkli bir sekilde sorabilir misiniz?"
+DEFAULT_FALLBACK = "Bunu tam anlayamadım. Size restoran menüsü, fiyatlar veya alerjen uyarıları hakkında yardımcı olabilirim."
 
 # Repository ornegi
 _repo = MenuRepository()
 
 
-def handle_menu_request(user_message: str) -> str:
+def handle_menu_request(user_message: str, session: dict | None = None) -> str:
     """Menu isteme intentini yanit ver."""
     entities = extract_entities(user_message)
     matched_categories = entities.kategoriler or ([entities.kategori] if entities.kategori else [])
+
+    # Update session memory
+    if session is not None and matched_categories:
+        session["last_categories"] = matched_categories
 
     # Kategori varsa ona gore filtrele, yoksa tum menuyu goster
     if matched_categories:
@@ -70,11 +74,24 @@ def handle_menu_request(user_message: str) -> str:
     return "\n".join(lines)
 
 
-def handle_price_request(user_message: str) -> str:
+def handle_price_request(user_message: str, session: dict | None = None) -> str:
     """Fiyat sorma intentini yanit ver."""
     entities = extract_entities(user_message)
 
-    items = _repo.get_by_price_range(entities.fiyat_min, entities.fiyat_max)
+    matched_categories = entities.kategoriler or ([entities.kategori] if entities.kategori else [])
+    if not matched_categories and session is not None and session.get("last_categories"):
+        matched_categories = session["last_categories"]
+
+    if matched_categories:
+        items = []
+        for category in matched_categories:
+            items.extend(_repo.get_recommendations(
+                kategori=category,
+                fiyat_min=entities.fiyat_min,
+                fiyat_max=entities.fiyat_max
+            ))
+    else:
+        items = _repo.get_by_price_range(entities.fiyat_min, entities.fiyat_max)
 
     if not items:
         return "Belirtilen fiyat araliginda urun bulunamadi."
@@ -88,15 +105,23 @@ def handle_price_request(user_message: str) -> str:
     else:
         price_info = "Tüm urunler"
 
-    prefix = f"{price_info} FIYAT ARALIGINDA ONERILER:\n"
+    if matched_categories:
+        category_display = ", ".join(category.replace("_", " ") for category in matched_categories)
+        prefix = f"{category_display.upper()} ICIN {price_info} FIYAT ARALIGINDA ONERILER:\n"
+    else:
+        prefix = f"{price_info} FIYAT ARALIGINDA ONERILER:\n"
+
     menu_text = _repo.format_items_as_text(items)
     return prefix + menu_text
 
 
-def handle_allergen_request(user_message: str) -> str:
+def handle_allergen_request(user_message: str, session: dict | None = None) -> str:
     """Alerjen oneri intentini yanit ver."""
     entities = extract_entities(user_message)
     matched_categories = entities.kategoriler or ([entities.kategori] if entities.kategori else [])
+
+    if not matched_categories and session is not None and session.get("last_categories"):
+        matched_categories = session["last_categories"]
 
     if not entities.alerjenler:
         return "Alerjen bilgisi yakalanamadi. Lutfen hangi alerjenlerden kacmak istediginizi belirtin."
@@ -118,13 +143,19 @@ def handle_allergen_request(user_message: str) -> str:
     return prefix + menu_text
 
 
-def response_for_intent(intent: str, user_message: str) -> str:
+def response_for_intent(intent: str, user_message: str, session: dict | None = None) -> str:
     """Niyete gore cevap uret."""
     if intent == "menu_isteme":
-        return handle_menu_request(user_message)
+        return handle_menu_request(user_message, session)
     elif intent == "fiyat_sorma":
-        return handle_price_request(user_message)
+        return handle_price_request(user_message, session)
     elif intent == "alerjen_oneri_isteme":
-        return handle_allergen_request(user_message)
+        return handle_allergen_request(user_message, session)
+    elif intent == "iletisim_saatler":
+        return "ResQAI Bistro & Coffee, Kadıköy şubemizde haftanın her günü 08:00 - 23:00 saatleri arasında hizmet vermektedir. Telefon numaramız: 0216 123 45 67, Adresimiz: Caferağa Mah. Moda Cad. No: 42, Kadıköy/İstanbul."
+    elif intent == "selamlasma_veda":
+        return "Merhaba! Size nasıl yardımcı olabilirim? Menümüz, fiyatlarımız veya alerjen uyarıları hakkında soru sorabilirsiniz."
+    elif intent == "siparis_isteme":
+        return "Sipariş vermek için web sitemizdeki 'Sepete Ekle' butonlarını kullanabilir veya 0216 123 45 67 numaralı hattımızdan bize ulaşabilirsiniz."
     else:
         return DEFAULT_FALLBACK

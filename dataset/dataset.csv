@@ -1,4 +1,4 @@
-﻿metin,niyet
+metin,niyet
 Menüde neler var?,menu_isteme
 Yemek listesini görebilir miyim?,menu_isteme
 Neler yiyebiliriz?,menu_isteme
@@ -211,3 +211,158 @@ Renklendirici alerjim var tamamen doğal meyve sularınız neler?,alerjen_oneri_
 MSG yani Çin tuzu kullanmıyorsunuz değil mi ona göre ne yiyebilirim?,alerjen_oneri_isteme
 Sülfit alerjim var şarap harici ne içebilirim?,alerjen_oneri_isteme
 Sarımsaksız yoğurtlu bir meze var mı?,alerjen_oneri_isteme
+Adresiniz nedir?,iletisim_saatler
+Neredesiniz?,iletisim_saatler
+Konumunuzu gönderir misiniz?,iletisim_saatler
+Kaçta açılıyorsunuz?,iletisim_saatler
+Kapanış saatiniz kaç?,iletisim_saatler
+Çalışma saatleriniz nedir?,iletisim_saatler
+Telefon numaranız kaç?,iletisim_saatler
+Size nasıl ulaşabilirim?,iletisim_saatler
+Restoran nerede?,iletisim_saatler
+Hangi saatler arası açıksınız?,iletisim_saatler
+Hafta sonu açık mısınız?,iletisim_saatler
+Pazar günleri açık mısınız?,iletisim_saatler
+İletişim bilgilerinizi alabilir miyim?,iletisim_saatler
+Konum bilgisi verir misiniz?,iletisim_saatler
+Yol tarifi alabilir miyim?,iletisim_saatler
+Hangi caddedesiniz?,iletisim_saatler
+Telefonla rezervasyon yapabilir miyiz?,iletisim_saatler
+Saat kaçta kapanıyor restoran?,iletisim_saatler
+Sabah kaçta servis başlıyor?,iletisim_saatler
+Bayramda açık mısınız?,iletisim_saatler
+İrtibat numaranız nedir?,iletisim_saatler
+Adres tarifi yapar mısınız?,iletisim_saatler
+Konum olarak yakınlarda bilinen bir yer var mı?,iletisim_saatler
+Hangi mahallede bulunuyorsunuz?,iletisim_saatler
+Rezervasyon için hangi numarayı aramalıyım?,iletisim_saatler
+Gece kaça kadar servisiniz var?,iletisim_saatler
+Açılış saatiniz nedir?,iletisim_saatler
+Restoranınızın adresi nedir?,iletisim_saatler
+Telefon numaranızı verir misiniz?,iletisim_saatler
+Haritada yeriniz nerede?,iletisim_saatler
+Yol tarifi verir misiniz?,iletisim_saatler
+Çalışma saatlerinizi öğrenebilir miyim?,iletisim_saatler
+Hafta içi kaçta açılıyorsunuz?,iletisim_saatler
+Hafta sonu kaça kadar açıksınız?,iletisim_saatler
+Resmi tatillerde açık mısınız?,iletisim_saatler
+Telefon hattınız aktif mi?,iletisim_saatler
+Adresi detaylı yazar mısınız?,iletisim_saatler
+Konumunuz neresi tam olarak?,iletisim_saatler
+Müşteri hizmetleri numaranız nedir?,iletisim_saatler
+Hangi saatlerde hizmet veriyorsunuz?,iletisim_saatler
+Restoranın tam adresi nedir?,iletisim_saatler
+Merhaba,selamlasma_veda
+Selam,selamlasma_veda
+Günaydın,selamlasma_veda
+İyi günler,selamlasma_veda
+İyi akşamlar,selamlasma_veda
+Hoşça kalın,selamlasma_veda
+Görüşmek üzere,selamlasma_veda
+Güle güle,selamlasma_veda
+Merhabalar,selamlasma_veda
+Selamlar,selamlasma_veda
+Hey chatbot,selamlasma_veda
+Orada kimse var mı?,selamlasma_veda
+İyi geceler,selamlasma_veda
+Tünaydın,selamlasma_veda
+Merhaba yardımcı olabilir misiniz?,selamlasma_veda
+Selam dostum,selamlasma_veda
+Hoşçakal,selamlasma_veda
+Kendine iyi bak,selamlasma_veda
+Ben kaçtım,selamlasma_veda
+Sonra görüşürüz,selamlasma_veda
+Görüşürüz,selamlasma_veda
+Bay bay,selamlasma_veda
+Sağlıcakla kalın,selamlasma_veda
+Kolay gelsin,selamlasma_veda
+Hayırlı işler,selamlasma_veda
+İyi çalışmalar,selamlasma_veda
+Selamünaleyküm,selamlasma_veda
+Aleykümselam,selamlasma_veda
+Merhaba nasılsınız?,selamlasma_veda
+Selam ne haber?,selamlasma_veda
+Hoş geldiniz,selamlasma_veda
+Hoş bulduk,selamlasma_veda
+Teşekkürler görüşmek üzere,selamlasma_veda
+Şimdilik hoşça kal,selamlasma_veda
+İyi günler dilerim,selamlasma_veda
+Hayırlı sabahlar,selamlasma_veda
+İyi akşamlar dilerim,selamlasma_veda
+Görüşmek dileğiyle,selamlasma_veda
+Kendine iyi bak görüşürüz,selamlasma_veda
+Selam chat,selamlasma_veda
+Sipariş vermek istiyorum.,siparis_isteme
+Nasıl sipariş verebilirim?,siparis_isteme
+Sipariş adımları nelerdir?,siparis_isteme
+Yemek siparişi vermek istiyorum.,siparis_isteme
+Siparişimi nasıl oluştururum?,siparis_isteme
+Buradan sipariş verebiliyor muyum?,siparis_isteme
+Nasıl satın alabilirim?,siparis_isteme
+Sipariş verme işlemi nasıl yapılıyor?,siparis_isteme
+Beni siparişe yönlendirir misin?,siparis_isteme
+Sipariş oluşturmak istiyorum.,siparis_isteme
+Yemek siparişi nasıl verilir?,siparis_isteme
+Online sipariş alıyor musunuz?,siparis_isteme
+Nasıl sipariş geçebilirim?,siparis_isteme
+Sipariş paneline nasıl giderim?,siparis_isteme
+Sipariş vermek için ne yapmalıyım?,siparis_isteme
+Sipariş alıyor musunuz?,siparis_isteme
+Siparişimi nasıl iletirim?,siparis_isteme
+Şuradan bir sipariş geçelim.,siparis_isteme
+Sipariş vermek için yönlendirir misiniz?,siparis_isteme
+Sipariş menüsüne nasıl ulaşırım?,siparis_isteme
+Sipariş kaydı nasıl yapılır?,siparis_isteme
+İnternetten sipariş veriliyor mu?,siparis_isteme
+Sipariş oluşturma konusunda yardımcı olur musunuz?,siparis_isteme
+Buradan direkt sipariş verebilir miyim?,siparis_isteme
+Nasıl sipariş oluşturulur?,siparis_isteme
+Eve sipariş gönderebiliyor musunuz?,siparis_isteme
+Paket servis siparişi nasıl veririm?,siparis_isteme
+Sipariş butonunu bulamadım nasıl veririm?,siparis_isteme
+Sipariş adımlarıını anlatır mısınız?,siparis_isteme
+Sipariş vermek için nereye tıklamalıyım?,siparis_isteme
+Sipariş talebi oluşturmak istiyorum.,siparis_isteme
+Yemek siparişi vermek için ne gerekiyor?,siparis_isteme
+Siparişimi onaylamak istiyorum.,siparis_isteme
+Sipariş hattına nasıl bağlanırım?,siparis_isteme
+Buradan sipariş alıyor musunuz?,siparis_isteme
+Sipariş vermek istiyorum yardımcı olun.,siparis_isteme
+Siparişi nereden geçiyoruz?,siparis_isteme
+Nasıl sipariş eklerim?,siparis_isteme
+Paket servis siparişi oluşturmak istiyorum.,siparis_isteme
+Sipariş vermek için ne yapmam lazım?,siparis_isteme
+Şefin spesiyali nedir?,menu_isteme
+Spesiyallerinizden ne önerebilirsiniz?,menu_isteme
+Kredi kartı komisyon oranınız nedir?,fiyat_sorma
+Kartla ödemede komisyon alıyor musunuz?,fiyat_sorma
+Ben kaçtım iyi günler,selamlasma_veda
+Görüşürüz ben kaçtım,selamlasma_veda
+Restoranda ne yenir?,menu_isteme
+Burada ne yenir?,menu_isteme
+Menüde neler yiyebiliriz?,menu_isteme
+Bugün ne yiyebiliriz?,menu_isteme
+Tatlılardan ne kaldı tatlı listesini alayım,menu_isteme
+Tatlılardan ne var ne kaldı?,menu_isteme
+Yumurtasız yemekleriniz neler?,alerjen_oneri_isteme
+Yumurtasız ne önerebilirsiniz?,alerjen_oneri_isteme
+Yumurtasız tatlı veya yemek var mı?,alerjen_oneri_isteme
+Menüden neler sipariş edebiliriz?,menu_isteme
+Sipariş edebileceğimiz yemekler neler?,menu_isteme
+Menünün spesiyali nedir?,menu_isteme
+Bugün günün çorbası nedir?,menu_isteme
+Tatlı menünüz nedir?,menu_isteme
+Kahve fiyatı nedir?,fiyat_sorma
+Su fiyatı nedir?,fiyat_sorma
+Hamburger fiyatı nedir?,fiyat_sorma
+Adresiniz tam olarak nedir?,iletisim_saatler
+Telefon numaranız nedir?,iletisim_saatler
+Yakınlarda şubeniz var mı?,iletisim_saatler
+Otoparkınız var mı?,iletisim_saatler
+Bahçeniz veya dış mekanınız var mı?,iletisim_saatler
+Sabahınız hayırlı olsun,selamlasma_veda
+Hayırlı sabahlar dilerim,selamlasma_veda
+İyi sabahlar,selamlasma_veda
+Telefon numaranızı alabilir miyim?,iletisim_saatler
+Adres bilginizi alabilir miyim?,iletisim_saatler
+Çalışma saatleri bilgisini alabilir miyim?,iletisim_saatler

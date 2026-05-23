@@ -8,6 +8,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 
+from .preprocess import preprocess_text
+
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_DATASET_PATH = PROJECT_ROOT / "dataset" / "dataset.csv"
 DEFAULT_MODEL_PATH = PROJECT_ROOT / "models" / "intent_model.joblib"
@@ -34,7 +36,11 @@ def build_model() -> Pipeline:
         steps=[
             (
                 "vectorizer",
-                TfidfVectorizer(ngram_range=(1, 2), lowercase=True, strip_accents="unicode"),
+                TfidfVectorizer(
+                    ngram_range=(1, 2),
+                    preprocessor=preprocess_text,
+                    lowercase=False,
+                ),
             ),
             (
                 "classifier",
@@ -63,6 +69,12 @@ def load_model(model_path: Path = DEFAULT_MODEL_PATH) -> Pipeline:
     return joblib.load(model_path)
 
 
-def predict_intent(model: Pipeline, message: str) -> str:
-    prediction = model.predict([message])
-    return str(prediction[0])
+def predict_intent(model: Pipeline, message: str, threshold: float = 0.45) -> str:
+    probs = model.predict_proba([message])[0]
+    max_idx = probs.argmax()
+    max_prob = probs[max_idx]
+    
+    if max_prob < threshold:
+        return "fallback"
+        
+    return str(model.classes_[max_idx])

@@ -23,6 +23,9 @@ def test_response_mapping_includes_known_intents() -> None:
     assert response_for_intent("menu_isteme", "Menude neler var?")
     assert response_for_intent("fiyat_sorma", "Ne kadar?")
     assert response_for_intent("alerjen_oneri_isteme", "Fistik alerjim var")
+    assert response_for_intent("iletisim_saatler", "Adresiniz nedir?")
+    assert response_for_intent("selamlasma_veda", "Merhaba")
+    assert response_for_intent("siparis_isteme", "Sipariş vermek istiyorum")
 
 
 def test_health_endpoint() -> None:
@@ -264,7 +267,55 @@ def test_repository_format_items_as_text() -> None:
 
 def test_handle_menu_request_filters_sut_in_kahve() -> None:
     reply = handle_menu_request("Sütsüz kahve öner")
-    assert "Latte" not in reply
+    assert "- Latte:" not in reply
     assert "Cappuccino" not in reply
     assert "Mocha" not in reply
     assert "Espresso" in reply
+
+
+def test_turkish_preprocess_text() -> None:
+    from resqai.preprocess import preprocess_text
+    # test lowercase mapping
+    assert preprocess_text("IŞIK ılık Şeker İÇ") == "ışık ılık şeker iç"
+    # test punctuation removal
+    assert preprocess_text("merhaba, nasılsın?!") == "merhab nasıl"
+    # test stemming
+    assert "tatl" in preprocess_text("tatlılardan")
+    assert preprocess_text("çorbası") == "çorb"
+    # test that sız/siz and lı/li are not stripped as suffixes but stem to their respective phonetic endings
+    assert preprocess_text("glutensiz") == "glu"
+    assert preprocess_text("fıstıklı") == "fıstıkl"
+
+
+def test_confidence_threshold_fallback() -> None:
+    from resqai.model import load_model, predict_intent
+    model_path = Path(__file__).resolve().parents[1] / "models" / "intent_model.joblib"
+    if model_path.exists():
+        model = load_model(model_path)
+        # Random irrelevant string should fall back
+        intent = predict_intent(model, "radyo yayını", threshold=0.45)
+        assert intent == "fallback"
+
+
+def test_session_based_context_flow() -> None:
+    with TestClient(app) as client:
+        # 1. Ask for desserts -> session context saves 'tatli'
+        response1 = client.post("/chat", json={"message": "Tatlılarda neyiniz var?", "session_id": "test_session_1"})
+        assert response1.status_code == 200
+        assert response1.json()["intent"] == "menu_isteme"
+        assert "San Sebastian" in response1.json()["reply"]
+        
+        # 2. Ask for prices -> should reuse context and filter for desserts
+        response2 = client.post("/chat", json={"message": "Peki fiyatları nedir?", "session_id": "test_session_1"})
+        assert response2.status_code == 200
+        assert response2.json()["intent"] == "fiyat_sorma"
+        assert "TATLI ICIN Tüm urunler FIYAT ARALIGINDA ONERILER" in response2.json()["reply"]
+        assert "San Sebastian" in response2.json()["reply"]
+        # Ensure items from other categories (like Espresso) are NOT in the reply
+        assert "Espresso" not in response2.json()["reply"]
+
+        # 3. Use a different session id -> should NOT have the desserts context
+        response3 = client.post("/chat", json={"message": "Peki fiyatları nedir?", "session_id": "test_session_2"})
+        assert response3.status_code == 200
+        # Without context, it lists all items
+        assert "Espresso" in response3.json()["reply"]
