@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from .entities import extract_entities
+from .entities import extract_entities, normalize_text
 from .repository import MenuRepository
 
 DEFAULT_FALLBACK = "Bunu tam anlayamadım. Size restoran menüsü, fiyatlar veya alerjen uyarıları hakkında yardımcı olabilirim."
@@ -12,6 +12,24 @@ _repo = MenuRepository()
 def handle_menu_request(user_message: str, session: dict | None = None) -> str:
     """Menu isteme intentini yanit ver."""
     entities = extract_entities(user_message)
+
+    # Spesyal / Tavsiye kontrolü
+    normalized = normalize_text(user_message)
+    rec_words = ["spesyal", "spesiyal", "tavsiye", "meshur", "en iyi", "en cok satan", "populer", "sefin"]
+    if any(w in normalized for w in rec_words):
+        return (
+            "ResQAI Bistro & Coffee Şefin Spesiyalleri ve Tavsiyeleri:\n\n"
+            "✨ Şefin Özel Ana Yemeği:\n"
+            "- Somon Izgara (Krema ve taze otlarla fırınlanmış): 310 TL\n\n"
+            "🍔 En Popüler Burgerimiz:\n"
+            "- Klasik Cheeseburger (180g sulu dana köfte, cheddar peyniri): 220 TL\n\n"
+            "🍰 İmza Tatlımız:\n"
+            "- San Sebastian Cheesecake (Akışkan kıvamlı, nefis lezzet): 170 TL\n\n"
+            "☕ Özel Kahvemiz:\n"
+            "- Soya Sütlü Latte (Soya sütü ile hazırlanmış taze espresso): 130 TL\n\n"
+            "Sipariş etmek istediğiniz bir ürün veya başka bir öneri isterseniz yardımcı olabilirim!"
+        )
+
     matched_categories = entities.kategoriler or ([entities.kategori] if entities.kategori else [])
 
     # Update session memory

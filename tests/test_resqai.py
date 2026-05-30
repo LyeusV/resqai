@@ -404,5 +404,13 @@ def test_mantar_allergen_extraction_and_filtering() -> None:
     assert "Pesto Makarna" in reply  # Other pasta included
 
 
+def test_recommendation_query() -> None:
+    reply = handle_menu_request("spesyal ürününüz nedir")
+    assert "Şefin Spesiyalleri ve Tavsiyeleri" in reply
+    assert "Somon Izgara" in reply
+    assert "San Sebastian" in reply
+
+
+
 
 
