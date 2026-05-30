@@ -6,7 +6,7 @@ from fastapi.testclient import TestClient
 
 from resqai.api import app
 from resqai.model import load_dataset
-from resqai.responses import response_for_intent, handle_menu_request
+from resqai.responses import response_for_intent, handle_menu_request, handle_price_request
 from resqai.entities import extract_entities, extract_allergens, extract_category, extract_categories, extract_price_range
 from resqai.repository import MenuRepository
 
@@ -335,3 +335,74 @@ def test_session_based_context_flow() -> None:
         assert response3.status_code == 200
         # Without context, it lists all items
         assert "Espresso" in response3.json()["reply"]
+
+
+def test_extract_price_range_advanced() -> None:
+    # Test "altında" (under) pattern
+    min_p, max_p = extract_price_range("150₺ altında ne önerirsin?")
+    assert min_p is None
+    assert max_p == 150
+
+    # Test "üstünde" (over) pattern
+    min_p, max_p = extract_price_range("100 TL üstü yemekler")
+    assert min_p == 100
+    assert max_p is None
+
+    # Test "civarında" (around) pattern
+    min_p, max_p = extract_price_range("100₺ civarında ne var?")
+    assert min_p == 80
+    assert max_p == 120
+
+    # Test implicit single price (default to max)
+    min_p, max_p = extract_price_range("120 TL bütçe var")
+    assert min_p is None
+    assert max_p == 120
+
+
+def test_is_yemek_filtering() -> None:
+    # Query mentions "yemek"
+    entities = extract_entities("150 ile 200 arasinda yemek ne var?")
+    assert entities.is_yemek is True
+
+    # Test that handle_price_request excludes desserts (like San Sebastian) and coffee
+    reply = handle_price_request("150 ile 200 arasinda yemek ne var?")
+    assert "YEMEK SECENEKLERI ICIN ONERILER" in reply
+    assert "San Sebastian" not in reply  # Dessert excluded
+    assert "Baklava" not in reply  # Dessert excluded
+    assert "Menemen" in reply  # Food included
+    assert "Sucuklu Yumurta" in reply  # Food included
+
+
+def test_session_fallback_override_for_yemek() -> None:
+    from resqai.responses import handle_allergen_request
+    # 1. User session context has 'tatli'
+    session = {"last_categories": ["tatli"]}
+
+    # 2. User asks for "glutensiz yemek öner" (mentions 'yemek')
+    # It should NOT use 'tatli' from session context and instead return general gluten-free food (savory options)
+    reply = handle_allergen_request("glutensiz yemek öner", session=session)
+
+    assert "tatli KATEGORI SECENEKLERI" not in reply
+    assert "GUVENLI YEMEK SECENEKLERI" in reply
+    assert "San Sebastian" not in reply  # San Sebastian is gluten-free dessert but should be excluded because they asked for yemek
+    assert "Glutensiz Ekmek" in reply  # Savory food should be included
+
+
+def test_mantar_allergen_extraction_and_filtering() -> None:
+    from resqai.responses import handle_allergen_request
+    # 1. Test extraction
+    entities = extract_entities("Mantar alerjim var yemek öner")
+    assert "mantar" in entities.alerjenler
+    assert entities.is_yemek is True
+
+    # 2. Test response filtering
+    reply = handle_allergen_request("Mantar alerjim var yemek öner")
+    assert "mantar alerjisi icin GUVENLI YEMEK SECENEKLERI:" in reply
+    assert "Mantar Çorbası" not in reply  # Mushroom soup excluded
+    assert "Mantarlı Fettucine" not in reply  # Mushroom pasta excluded
+    assert "Domates Çorbası" in reply  # Other soup included
+    assert "Pesto Makarna" in reply  # Other pasta included
+
+
+
+

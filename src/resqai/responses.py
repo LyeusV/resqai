@@ -77,10 +77,14 @@ def handle_menu_request(user_message: str, session: dict | None = None) -> str:
 def handle_price_request(user_message: str, session: dict | None = None) -> str:
     """Fiyat sorma intentini yanit ver."""
     entities = extract_entities(user_message)
+    non_food_categories = {"tatli", "kahve", "sicak_icecek", "soguk_icecek"}
 
     matched_categories = entities.kategoriler or ([entities.kategori] if entities.kategori else [])
     if not matched_categories and session is not None and session.get("last_categories"):
-        matched_categories = session["last_categories"]
+        fallback_cats = session["last_categories"]
+        if entities.is_yemek:
+            fallback_cats = [c for c in fallback_cats if c not in non_food_categories]
+        matched_categories = fallback_cats
 
     if matched_categories:
         items = []
@@ -92,6 +96,9 @@ def handle_price_request(user_message: str, session: dict | None = None) -> str:
             ))
     else:
         items = _repo.get_by_price_range(entities.fiyat_min, entities.fiyat_max)
+
+    if entities.is_yemek:
+        items = [item for item in items if item.get("kategori") not in non_food_categories]
 
     if not items:
         return "Belirtilen fiyat araliginda urun bulunamadi."
@@ -109,7 +116,10 @@ def handle_price_request(user_message: str, session: dict | None = None) -> str:
         category_display = ", ".join(category.replace("_", " ") for category in matched_categories)
         prefix = f"{category_display.upper()} ICIN {price_info} FIYAT ARALIGINDA ONERILER:\n"
     else:
-        prefix = f"{price_info} FIYAT ARALIGINDA ONERILER:\n"
+        if entities.is_yemek:
+            prefix = f"{price_info} YEMEK SECENEKLERI ICIN ONERILER:\n"
+        else:
+            prefix = f"{price_info} FIYAT ARALIGINDA ONERILER:\n"
 
     menu_text = _repo.format_items_as_text(items)
     return prefix + menu_text
@@ -118,10 +128,14 @@ def handle_price_request(user_message: str, session: dict | None = None) -> str:
 def handle_allergen_request(user_message: str, session: dict | None = None) -> str:
     """Alerjen oneri intentini yanit ver."""
     entities = extract_entities(user_message)
-    matched_categories = entities.kategoriler or ([entities.kategori] if entities.kategori else [])
+    non_food_categories = {"tatli", "kahve", "sicak_icecek", "soguk_icecek"}
 
+    matched_categories = entities.kategoriler or ([entities.kategori] if entities.kategori else [])
     if not matched_categories and session is not None and session.get("last_categories"):
-        matched_categories = session["last_categories"]
+        fallback_cats = session["last_categories"]
+        if entities.is_yemek:
+            fallback_cats = [c for c in fallback_cats if c not in non_food_categories]
+        matched_categories = fallback_cats
 
     if not entities.alerjenler:
         return "Alerjen bilgisi yakalanamadi. Lutfen hangi alerjenlerden kacmak istediginizi belirtin."
@@ -129,8 +143,11 @@ def handle_allergen_request(user_message: str, session: dict | None = None) -> s
     allergen_display = ", ".join(entities.alerjenler)
     items = _repo.get_safe_for_allergens(entities.alerjenler)
 
+    if entities.is_yemek:
+        items = [item for item in items if item.get("kategori") not in non_food_categories]
+
     if not matched_categories:
-        prefix = f"{allergen_display} alerjisi icin GUVENLI SECENEKLER:\n"
+        prefix = f"{allergen_display} alerjisi icin GUVENLI YEMEK SECENEKLERI:\n" if entities.is_yemek else f"{allergen_display} alerjisi icin GUVENLI SECENEKLER:\n"
     else:
         category_display = ", ".join(category.replace("_", " ") for category in matched_categories)
         prefix = f"{allergen_display} alerjisi icin {category_display} KATEGORI SECENEKLERI:\n"
@@ -141,6 +158,7 @@ def handle_allergen_request(user_message: str, session: dict | None = None) -> s
 
     menu_text = _repo.format_items_as_text(items)
     return prefix + menu_text
+
 
 
 def response_for_intent(intent: str, user_message: str, session: dict | None = None) -> str:

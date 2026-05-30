@@ -24,7 +24,7 @@ const CAT_META = {
 const ALLERGENS = {
   sut: 'Süt', gluten: 'Gluten', yumurta: 'Yumurta', balik: 'Balık',
   susam: 'Susam', soya: 'Soya', kuruyemis: 'Kuruyemiş', fistik: 'Fıstık',
-  hindistan_cevizi: 'H. Cevizi', cikolata: 'Çikolata',
+  hindistan_cevizi: 'H. Cevizi', cikolata: 'Çikolata', mantar: 'Mantar',
 }
 
 const QUICK = [

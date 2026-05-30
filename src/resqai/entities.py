@@ -12,6 +12,8 @@ class ExtractedEntities:
     kategoriler: list[str]
     fiyat_min: int | None
     fiyat_max: int | None
+    is_yemek: bool = False
+
 
 
 # Alerjen esilestirme sozlugu
@@ -26,6 +28,7 @@ ALLERGEN_KEYWORDS = {
     "susam": ["susam", "tahin"],
     "soya": ["soya", "soya sutu", "soya sosu"],
     "kuruyemis": ["kuruyemis", "ceviz", "findik", "badem", "kaju"],
+    "mantar": ["mantar", "mantarli"],
 }
 
 
@@ -34,10 +37,11 @@ def normalize_text(text: str) -> str:
     Turkce karakterleri ve aksanli harfleri normalize ederek
     kurallarin daha stabil calismasini saglar.
     """
-    lowered = text.lower()
+    lowered = text.lower().replace("ı", "i")
     normalized = unicodedata.normalize("NFKD", lowered)
     ascii_text = "".join(ch for ch in normalized if not unicodedata.combining(ch))
     return ascii_text
+
 
 # Kategori eslestirme sozlugu
 CATEGORY_KEYWORDS = {
@@ -117,18 +121,50 @@ def extract_categories(text: str) -> list[str]:
 def extract_price_range(text: str) -> tuple[int | None, int | None]:
     """
     Metinden fiyat araligini cikar.
+    'altinda', 'ucuz' gibi kelimelerle baglamsal analiz yapar.
     Cikti: (min_fiyat, max_fiyat)
     """
-    # Basit regex ile fiyat sayilari bul
-    numbers = re.findall(r"\b\d+\b", text)
+    normalized = normalize_text(text)
+
+    # Sayilari bul (₺ ve TL yanindakiler dahil)
+    numbers = re.findall(r"\d+", normalized)
 
     if not numbers:
+        # Sayi yok ama ucuz/pahali gibi anahtar kelimeler var mi?
+        under_words = ["ucuz", "uygun", "hesapli", "butce"]
+        over_words = ["pahali", "luks", "premium"]
+        if any(w in normalized for w in under_words):
+            return None, 150  # Default ucuz esigi
+        if any(w in normalized for w in over_words):
+            return 200, None  # Default pahali esigi
         return None, None
 
-    numbers_int = sorted([int(n) for n in numbers])
+    numbers_int = sorted([int(n) for n in numbers if int(n) >= 10])  # 10 altini filtrele
+
+    if not numbers_int:
+        return None, None
+
+    # Baglam analizi icin anahtar kelimeler
+    under_words = ["altinda", "alti", "asagi", "ucuz", "uygun", "butce", "kadar", "gecmesin"]
+    over_words = ["ustunde", "ustu", "uzeri", "uzerinde", "yukari", "pahali"]
+    around_words = ["civarinda", "civari", "dolaylarinda", "yaklasik"]
+
+    has_under = any(w in normalized for w in under_words)
+    has_over = any(w in normalized for w in over_words)
+    has_around = any(w in normalized for w in around_words)
 
     if len(numbers_int) == 1:
-        return numbers_int[0], numbers_int[0]
+        val = numbers_int[0]
+        if has_under:
+            return None, val
+        elif has_over:
+            return val, None
+        elif has_around:
+            margin = max(int(val * 0.2), 20)
+            return max(0, val - margin), val + margin
+        else:
+            # Varsayilan: tek sayi varsa "altinda" olarak yorumla
+            return None, val
     else:
         return numbers_int[0], numbers_int[-1]
 
@@ -143,10 +179,16 @@ def extract_entities(text: str) -> ExtractedEntities:
     kategoriler = extract_categories(text)
     fiyat_min, fiyat_max = extract_price_range(text)
 
+    # "yemek", "yiyecek" kelimelerini kontrol et (tatli ve icecekleri ayirt etmek icin)
+    normalized = normalize_text(text)
+    is_yemek = any(w in normalized for w in ["yemek", "yiyecek", "atistiracak", "tuzlu"])
+
     return ExtractedEntities(
         alerjenler=alerjenler,
         kategori=kategori,
         kategoriler=kategoriler,
         fiyat_min=fiyat_min,
         fiyat_max=fiyat_max,
+        is_yemek=is_yemek,
     )
+

@@ -79,7 +79,7 @@
 
     {"id": 67, "isim": "Domates Çorbası", "kategori": "corba", "fiyat": 75, "icerik": ["domates", "krema", "tereyag"], "alerjenler": ["sut"]},
     {"id": 68, "isim": "Mercimek Çorbası", "kategori": "corba", "fiyat": 70, "icerik": ["mercimek", "havuc", "soğan"], "alerjenler": []},
-    {"id": 69, "isim": "Mantar Çorbası", "kategori": "corba", "fiyat": 85, "icerik": ["mantar", "krema", "baharat"], "alerjenler": ["sut"]},
+    {"id": 69, "isim": "Mantar Çorbası", "kategori": "corba", "fiyat": 85, "icerik": ["mantar", "krema", "baharat"], "alerjenler": ["sut", "mantar"]},
     {"id": 70, "isim": "Tavuk Suyu Çorba", "kategori": "corba", "fiyat": 90, "icerik": ["tavuk", "terbiye", "sehriye"], "alerjenler": ["gluten", "yumurta"]},
 
     {"id": 71, "isim": "Kids Burger", "kategori": "cocuk_menu", "fiyat": 145, "icerik": ["dana_et", "ekmek", "patates"], "alerjenler": ["gluten"]},
@@ -96,7 +96,7 @@
 
     {"id": 80, "isim": "Pesto Makarna", "kategori": "makarna", "fiyat": 195, "icerik": ["makarna", "pesto", "parmesan"], "alerjenler": ["gluten", "sut", "kuruyemis"]},
     {"id": 81, "isim": "Napoliten Makarna", "kategori": "makarna", "fiyat": 185, "icerik": ["makarna", "domates_sosu", "feslegen"], "alerjenler": ["gluten"]},
-    {"id": 82, "isim": "Mantarlı Fettucine", "kategori": "makarna", "fiyat": 205, "icerik": ["fettucine", "mantar", "krema"], "alerjenler": ["gluten", "sut"]},
+    {"id": 82, "isim": "Mantarlı Fettucine", "kategori": "makarna", "fiyat": 205, "icerik": ["fettucine", "mantar", "krema"], "alerjenler": ["gluten", "sut", "mantar"]},
     {"id": 83, "isim": "Tavuklu Penne", "kategori": "makarna", "fiyat": 210, "icerik": ["penne", "tavuk", "krema", "baharat"], "alerjenler": ["gluten", "sut"]},
     {"id": 84, "isim": "Fıstıklı Baklava", "kategori": "tatli", "fiyat": 180, "icerik": ["un", "fistik", "serbet", "tereyag"], "alerjenler": ["fistik", "gluten", "sut"]},
     {"id": 85, "isim": "Soya Sütlü Latte", "kategori": "kahve", "fiyat": 130, "icerik": ["kahve", "soya_sutu"], "alerjenler": ["soya"]},

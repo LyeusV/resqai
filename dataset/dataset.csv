@@ -75,6 +75,22 @@ Gruplar için özel menünüz oluyor mu?,menu_isteme
 Menü kataloğunuzu alabilir miyim?,menu_isteme
 Neler sipariş edebiliriz?,menu_isteme
 Burada yemek için neler var?,menu_isteme
+Tatlılarda neyiniz var?,menu_isteme
+Kahveleriniz neler?,menu_isteme
+Çorbalarınız neler?,menu_isteme
+Burgerleriniz neler?,menu_isteme
+Pizzalarınız neler?,menu_isteme
+Salatalarınızda neler var?,menu_isteme
+Makarna çeşitleriniz neler?,menu_isteme
+Soğuk içecekleriniz neler?,menu_isteme
+Sıcak içecekleriniz neler?,menu_isteme
+Dürümlerinizde ne var?,menu_isteme
+Ana yemekleriniz neler?,menu_isteme
+Çocuk menüsünde neler var?,menu_isteme
+Vegan seçenekleriniz neler?,menu_isteme
+Atıştırmalıklarda ne var?,menu_isteme
+Kahvaltıda neler sunuyorsunuz?,menu_isteme
+Hangi tatlılarınız var?,menu_isteme
 Hamburger ne kadar?,fiyat_sorma
 Çorbanın fiyatı nedir?,fiyat_sorma
 En ucuz tatlı hangisi?,fiyat_sorma
@@ -145,6 +161,27 @@ Bu kadar yemek söylesek ne kadar öderiz?,fiyat_sorma
 Fiyatlar cep yakıyor mu?,fiyat_sorma
 Cüzdanı boşaltmayacak bir şeyler var mı fiyatı uygun?,fiyat_sorma
 Fiyat performans olarak en iyi yemeğiniz hangisi?,fiyat_sorma
+150₺ altında ne önerirsin?,fiyat_sorma
+100 TL altında yemek var mı?,fiyat_sorma
+200₺ altında bir şeyler yiyelim,fiyat_sorma
+80 TL üstü yemekleriniz neler?,fiyat_sorma
+50₺ altında ne var?,fiyat_sorma
+300 TL üzerinde yemek var mı?,fiyat_sorma
+100₺ civarında ne yiyebiliriz?,fiyat_sorma
+75 TL altında bir içecek önerir misin?,fiyat_sorma
+250₺ üstünde yemekleriniz hangileri?,fiyat_sorma
+Bütçem 120₺ ne önerirsin?,fiyat_sorma
+200 liranın altında ne var menüde?,fiyat_sorma
+100₺ ile ne yiyebilirim?,fiyat_sorma
+En ucuz yemekler hangileri?,fiyat_sorma
+Ucuz bir şeyler yiyelim ne var?,fiyat_sorma
+Uygun fiyatlı menü seçenekleri neler?,fiyat_sorma
+60₺ altında atıştırmalık var mı?,fiyat_sorma
+150 TL civarı bir yemek öner,fiyat_sorma
+Mantar alerjim var yemek öner,alerjen_oneri_isteme
+Mantarsız ne yiyebilirim?,alerjen_oneri_isteme
+İçinde mantar olmayan çorbalarınız neler?,alerjen_oneri_isteme
+Mantar içermeyen makarna var mı?,alerjen_oneri_isteme
 Fıstık alerjim var ne önerirsiniz?,alerjen_oneri_isteme
 Sütsüz tatlılarınız neler?,alerjen_oneri_isteme
 Gluten içermeyen ana yemek var mı?,alerjen_oneri_isteme
