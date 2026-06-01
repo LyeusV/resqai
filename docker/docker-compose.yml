@@ -13,6 +13,7 @@ services:
       - ../dataset:/app/dataset
       - ../menu:/app/menu
       - ../models:/app/models
+      - ../tests:/app/tests
     environment:
       - PYTHONUNBUFFERED=1
     command: uvicorn resqai.api:app --host 0.0.0.0 --port 8000 --reload
