@@ -51,6 +51,11 @@ docker exec resqai-api python -m resqai.train
 ```bash
 docker exec resqai-api python -m resqai.dataset_quality
 ```
+### Unit & Entegrasyon Testleri
+
+```bash
+docker exec resqai-api pytest
+```
 
 ### API Sorgusu
 
@@ -103,4 +108,5 @@ Yeniden eğitmek için:
 ```bash
 docker exec resqai-api python -m resqai.train
 ```
+
 
